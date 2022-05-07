@@ -22,13 +22,13 @@ include("../connection.php");
     </div>
     <ul class="nav-links">
       <li>
-        <a href="course_list.php" class="active">
+        <a href="course_list.php">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">List of Courses</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="Upload_course.php">
           <i class='bx bx-box'></i>
           <span class="links_name">Upload course</span>
         </a>
@@ -90,6 +90,14 @@ include("../connection.php");
         <i class='bx bx-chevron-down'></i>
       </div>
     </nav>
+    <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div class="sales-details">
+                    <ul class="details">
+                </div>
+            </div>
+
+        </div>
   </section>
 
   <script>

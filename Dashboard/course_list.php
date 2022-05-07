@@ -5,8 +5,8 @@
 
 include("../connection.php");
 
-$query="SELECT * FROM courses";
-$result=mysqli_query($conn,$query);
+$query = "SELECT * FROM courses";
+$result = mysqli_query($conn, $query);
 
 ?>
 
@@ -29,13 +29,13 @@ $result=mysqli_query($conn,$query);
     </div>
     <ul class="nav-links">
       <li>
-        <a href="#" class="active">
+        <a href="course_list.php" class="active">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">List of Courses</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="Upload_course.php">
           <i class='bx bx-box'></i>
           <span class="links_name">Upload course</span>
         </a>
@@ -90,7 +90,7 @@ $result=mysqli_query($conn,$query);
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Dashboard</span>
       </div>
-     
+
       <div class="profile-details">
         <!--<img src="images/profile.jpg" alt="">-->
         <span class="admin_name">Prem Shahi</span>
@@ -103,98 +103,86 @@ $result=mysqli_query($conn,$query);
         <div class="recent-sales box">
           <div class="sales-details">
             <ul class="details">
-                <?php
-                if(mysqli_num_rows($result)>0)
-                {
-                    echo "<table style >";
-                    
-                        echo "<tr>";
-                        echo "<th>";
-                        echo "Course_Id";
-                        echo"</th>";
-                        echo "<th>";
-                        echo "Language";
-                        echo "</th>";
-                        echo "<th>";
-                        echo "Level";
-                        echo"</th>";
-                        echo "<th>";
-                        echo "Course_name";
-                        echo"</th>";
-                        echo "<th>";
-                        echo "Course_Id";
-                        echo"</th>";
-                        echo "<th>";
-                        echo "Description";
-                        echo"</th>";
-                        echo "<th>";
-                        echo "Price";
-                        echo"</th>";
-                        echo "<th>";
-                        echo "Created_at";
-                        echo"</h>";
-                        echo "<th>";
-                        echo "Updated_at";
-                        echo"</th>";
-                        echo"</tr>";
+              <?php
+              if (mysqli_num_rows($result) > 0) {
+                echo "<table border='1'>";
 
-                    while($row=mysqli_fetch_assoc($result))
-                    {
-                        echo "<tr>";
-                        echo "<td>";
-                        echo $row["Course_Id"];
-                        echo"</td>";
-                        echo "<td>";
-                        echo $row["Language"];
-                        echo "</td>";
-                        echo "<td>";
-                        echo $row["Level"];
-                        echo"</td>";
-                        echo "<td>";
-                        echo $row["Course_name"];
-                        echo"</td>";
-                        echo "<td>";
-                        echo $row["Course_Id"];
-                        echo"</td>";
-                        echo "<td>";
-                        echo $row["Description"];
-                        echo"</td>";
-                        echo "<td>";
-                        echo $row["Price"];
-                        echo"</td>";
-                        echo "<td>";
-                        echo $row["Created_at"];
-                        echo"</td>";
-                        echo "<td>";
-                        echo $row["Updated_at"];
-                        echo"</td>";
-                        echo"</tr>";
-                    }
-                    echo "</table>";
-                    
+                echo "<tr>";
+                echo "<th>";
+                echo "Course_Id";
+                echo "</th>";
+                echo "<th>";
+                echo "Language";
+                echo "</th>";
+                echo "<th>";
+                echo "Level";
+                echo "</th>";
+                echo "<th>";
+                echo "Course_name";
+                echo "</th>";
+                echo "<th>";
+                echo "Description";
+                echo "</th>";
+                echo "<th>";
+                echo "Price";
+                echo "</th>";
+                echo "<th>";
+                echo "Created";
+                echo "</th>";
+                echo "<th>";
+                echo "Updated";
+                echo "</th>";
+                echo "</tr>";
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<tr>";
+                  echo "<td>";
+                  echo $row["Course_Id"];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $row["Language"];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $row["Level"];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $row["Course_name"];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $row["Description"];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $row["Price"];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $row["Created_at"];
+                  echo "</td>";
+                  echo "<td>";
+                  echo $row["Updated_at"];
+                  echo "</td>";
+                  echo "</tr>";
                 }
-          ?>
+                echo "</table>";
+              }
+              ?>
           </div>
         </div>
-        
+
       </div>
     </div>
 
     <?php
-    if(mysqli_num_rows($result)==0)
-    {
-        echo("No courses added yet!");
-    }
-    else {
-        echo "<div>";
-        while($row=mysqli_fetch_assoc($result))
-        {
-          echo "<p>".$row['Course_name']."</p>"; 
-        }
-        echo "</div>";
+    if (mysqli_num_rows($result) == 0) {
+      echo ("No courses added yet!");
+    } else {
+      echo "<div>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo "<p>" . $row['Course_name'] . "</p>";
+      }
+      echo "</div>";
     }
 
-?>
+    ?>
   </section>
 
   <script>
@@ -726,6 +714,7 @@ $result=mysqli_query($conn,$query);
       left: 60px;
       width: calc(100% - 60px);
     }
+
   }
 </style>
 

@@ -68,7 +68,7 @@ if (isset($_POST["login"])) {
                     <input type="text" name="name" placeholder="Name" required />
                     <input type="email" name="email" placeholder="Email" required />
                     <input type="password" name="Pass" placeholder="Password" required />
-                    <input type="repassword" name="rPass" placeholder="Retype Password" required />
+                    <input type="password" name="rPass" placeholder="Retype Password" required />
                     <button type="submit" name="login">login</button>
                     <p class="message">Already have an account? <a href="Login.php">Login.</a></p>
                 </form>
