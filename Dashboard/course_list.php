@@ -53,25 +53,25 @@ $result = mysqli_query($conn, $query);
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="student_list.php">
           <i class='bx bx-coin-stack'></i>
           <span class="links_name">List of Students</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="add_student.php">
           <i class='bx bx-book-alt'></i>
           <span class="links_name">Add Student</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="edit_student.php">
           <i class='bx bx-user'></i>
           <span class="links_name">Edit Student</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="delete_student.php">
           <i class='bx bx-message'></i>
           <span class="links_name">Delete Student</span>
         </a>
@@ -163,6 +163,8 @@ $result = mysqli_query($conn, $query);
                   echo "</tr>";
                 }
                 echo "</table>";
+              } else {
+                echo ("No courses added yet!");
               }
               ?>
           </div>
@@ -171,18 +173,7 @@ $result = mysqli_query($conn, $query);
       </div>
     </div>
 
-    <?php
-    if (mysqli_num_rows($result) == 0) {
-      echo ("No courses added yet!");
-    } else {
-      echo "<div>";
-      while ($row = mysqli_fetch_assoc($result)) {
-        echo "<p>" . $row['Course_name'] . "</p>";
-      }
-      echo "</div>";
-    }
 
-    ?>
   </section>
 
   <script>

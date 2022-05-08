@@ -4,7 +4,7 @@
 <?php
 
 include("../connection.php");
-$query = "SELECT * FROM courses";
+$query = "SELECT * FROM user";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -34,19 +34,19 @@ $result = mysqli_query($conn, $query);
                 </a>
             </li>
             <li>
-                <a href="Upload_course.php" >
+                <a href="Upload_course.php">
                     <i class='bx bx-box'></i>
                     <span class="links_name">Upload course</span>
                 </a>
             </li>
             <li>
-                <a href="edit_course.php">
+                <a href="edit_course.php" >
                     <i class='bx bx-list-ul'></i>
                     <span class="links_name">Edit Course</span>
                 </a>
             </li>
             <li>
-                <a href="delete_course.php" class="active">
+                <a href="delete_course.php">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Delete Course</span>
                 </a>
@@ -64,7 +64,7 @@ $result = mysqli_query($conn, $query);
                 </a>
             </li>
             <li>
-                <a href="edit_student.php">
+                <a href="edit_student.php" class="active">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Edit Student</span>
                 </a>
@@ -103,28 +103,21 @@ $result = mysqli_query($conn, $query);
                     <div class="sales-details">
                         <ul class="details">
 
-                        <?php
+                            <?php
                             if (mysqli_num_rows($result) > 0) {
                                 echo "<table border='1'>";
-
                                 echo "<tr>";
                                 echo "<th>";
-                                echo "Course_Id";
+                                echo "User Id";
                                 echo "</th>";
                                 echo "<th>";
-                                echo "Language";
+                                echo "Name";
                                 echo "</th>";
                                 echo "<th>";
-                                echo "Level";
+                                echo "Email";
                                 echo "</th>";
                                 echo "<th>";
-                                echo "Course_name";
-                                echo "</th>";
-                                echo "<th>";
-                                echo "Description";
-                                echo "</th>";
-                                echo "<th>";
-                                echo "Price";
+                                echo "Admin";
                                 echo "</th>";
                                 echo "<th>";
                                 echo "Created";
@@ -135,24 +128,21 @@ $result = mysqli_query($conn, $query);
                                 echo "</tr>";
 
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    $admin="No";
+                                    if($row["Is_Admin"]===1)
+                                        $admin="Yes";
                                     echo "<tr>";
                                     echo "<td>";
-                                    echo $row["Course_Id"];
+                                    echo $row["User_Id"];
                                     echo "</td>";
                                     echo "<td>";
-                                    echo $row["Language"];
+                                    echo $row["Name"];
                                     echo "</td>";
                                     echo "<td>";
-                                    echo $row["Level"];
+                                    echo $row["Email"];
                                     echo "</td>";
                                     echo "<td>";
-                                    echo $row["Course_name"];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row["Description"];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $row["Price"];
+                                    echo $admin;
                                     echo "</td>";
                                     echo "<td>";
                                     echo $row["Created_at"];
@@ -163,37 +153,30 @@ $result = mysqli_query($conn, $query);
                                     echo "</tr>";
                                 }
                                 echo "</table>";
+                            } else {
+                                echo ("No users added yet!");
                             }
-                            else {
-                                echo ("No courses added yet!");
-                              }
                             ?>
-                            <form method="post" action="delete_course.php">
-                                <input type="text" name="id" placeholder="Enter Course ID" required />
+                            <form method="post" action="edit_student.php">
+                                <input type="text" name="id" placeholder="Enter User ID" required />
                                 <button type="submit" name="submit">Check</button>
                             </form>
                             <?php
                             if (isset($_POST["submit"])) {
                                 $id = $_POST["id"];
-                                $query = "SELECT * FROM courses WHERE Course_Id ='$id' ";
+                                $query = "SELECT * FROM user WHERE User_Id ='$id' ";
                                 $result = mysqli_query($conn, $query);
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         
-                                        $lang = $row["Language"];
-                                        $level = $row["Level"];
-                                        $c_Name = $row["Course_name"];
-                                        $desc = $row["Description"];
-                                        $price = $row["Price"];
+                                        $name = $row["Name"];
+                                        $email = $row["Email"];
                                         ?>
-                                        <form method="post" action="delete_course.php">
-                                <label> Course ID </label> <input type="text" name="ID" value="<?php echo $id; ?> " readonly/> <br>
-                                <label> Language </label> <input type="text" name="lang" value="<?php echo $lang; ?> " readonly /> <br>
-                                <label> Course Name </label> <input type="text" name="course_name" value=" <?php echo $c_Name; ?> " readonly /> <br>
-                                <label> Level </label> <input type="text" name="level" value=" <?php echo $level; ?> " readonly /> <br>
-                                <label> Description </label> <input type="text" name="desc" value="<?php echo $desc; ?> " readonly/><br>
-                                <label> Price </label><input type="text" name="price" value="<?php echo $price; ?> " readonly /><br>
-                                <button type="submit" name="del">Delete</button>
+                                <form method="post" action="edit_student.php">
+                                <label> User ID </label> <input type="text" name="ID" value="<?php echo $id; ?> "readonly /> <br>
+                                <label> Name </label> <input type="text" name="name" value="<?php echo $name; ?> " /> <br>
+                                <label> Email </label> <input type="email" name="email" value=" <?php echo $email; ?> "/> <br>
+                                <button type="submit" name="edit">Edit</button>
                             </form>
                                 <?php
                                     }
@@ -202,12 +185,15 @@ $result = mysqli_query($conn, $query);
                                     echo (' <script> alert("No such ID found.") </script>');
                                 }
                             }
-                            if (isset($_POST["del"])) {
-                                $id=$_POST["ID"];
-                                $query1 = "DELETE from courses WHERE Course_Id ='$id' ";
+                            if (isset($_POST["edit"])) {
+                                        $id=$_POST["ID"];
+                                        $name = $_POST["name"];
+                                        $email = $_POST["email"];
+                                $query1 = "UPDATE user SET Name='$name',Email='$email', Updated_at=CURRENT_TIMESTAMP 
+                                     WHERE User_Id ='$id' ";
                                 $result1 = mysqli_query($conn, $query1);
-                                echo (' <script> alert("Deleted successful!") </script>');
-                                echo("<script> window.location.replace('delete_course.php'); </script>");
+                                echo (' <script> alert("Successfully uploaded!") </script>');
+                                echo("<script> window.location.replace('edit_student.php'); </script>");
                             }
                             
                             ?>

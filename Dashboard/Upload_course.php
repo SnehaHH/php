@@ -51,25 +51,25 @@ include("../connection.php");
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="student_list.php">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">List of Students</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="add_student.php">
                     <i class='bx bx-book-alt'></i>
                     <span class="links_name">Add Student</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="edit_student.php">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Edit Student</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="delete_student.php">
                     <i class='bx bx-message'></i>
                     <span class="links_name">Delete Student</span>
                 </a>
