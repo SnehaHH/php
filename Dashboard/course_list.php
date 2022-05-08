@@ -41,13 +41,13 @@ $result = mysqli_query($conn, $query);
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="edit_course.php">
           <i class='bx bx-list-ul'></i>
           <span class="links_name">Edit Course</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="delete_course.php">
           <i class='bx bx-pie-chart-alt-2'></i>
           <span class="links_name">Delete Course</span>
         </a>
