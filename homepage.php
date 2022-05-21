@@ -45,9 +45,7 @@ session_start();
 					<li class="nav-item">
 						<a class="nav-link" href="#testimonial">Testimonials</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#plans">About Us</a>
-					</li>
+					
 					<?php
 					if (isset($_SESSION["name"])) {
 						echo ('<li class="nav-item">
