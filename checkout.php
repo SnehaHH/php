@@ -1,3 +1,22 @@
+<?php
+session_start();
+$id=$_SESSION["userid"];
+include("connection.php");
+$query =
+"SELECT
+user.User_Id,
+user.Email,
+courses.Course_Id,
+courses.Course_name,
+courses.Price,
+carts.user_id,
+carts.course_id
+FROM user
+INNER JOIN carts ON user.User_Id = carts.user_id
+INNER JOIN courses ON courses.Course_Id = carts.course_id
+WHERE user.User_Id = '$id' ";
+$result = mysqli_query($conn, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +24,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Languages & Courses</title>
+    <title>Check out</title>
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link rel="stylesheet" href="css/style.css">
@@ -49,54 +68,66 @@
         </div>
     </nav>
     <div class="page-body-wrapper">
-        <section id="home" class="home" style="background-position: 0-260px">
+        <section id="home" class="home" style="background-position: 0-280px">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="main-banner">
                             <div class="d-sm-flex justify-content-between">
                                 <div>
-                                    <h1 style="color:white;">Languages & Courses </h1>
+                                    <h1 style="color:white;">CHECKOUT</h1>
                                 </div>
                             </div>
+
                         </div>
+                        <?php
+                        if (mysqli_num_rows($result) > 0) {
+                            echo "<table class='table table-hover'>";
+
+                            echo "<tr>";
+                            echo "<th>";
+                            echo "Course Id";
+                            echo "</th>";
+                            echo "<th>";
+                            echo "Course Name";
+                            echo "</th>";
+                            echo "<th>";
+                            echo "Quantity";
+                            echo "</th>";
+                            echo "<th>";
+                            echo "Price";
+                            echo "</th>";
+                            echo "</tr>";
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                             
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $row["course_id"];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row["Course_name"];
+                                echo "</td>";
+                                echo "<td>";
+                                echo "1";
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row["Price"];;
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo ("Cart is empty.");
+                        }
+                        ?>
+
                     </div>
-                    <div class="col-sm-12">
-                        <div class="card my-5">
-                            <img class="card-img-top" src="images/German.png" alt="Card image cap" height="150" width="100">
-                            <div class="card-body">
-                                <h5 class="card-title">GERMAN</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                        <div class="card my-5">
-                            <img class="card-img-top" src="images/French.jpg" alt="Card image cap" height="150" width="100">
-                            <div class="card-body">
-                                <h5 class="card-title">FRENCH</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card my-5">
-                            <img class="card-img-top" src="images/German.png" alt="Card image cap" height="150" width="100">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <div class="card my-5">
-                            <img class="card-img-top" src="images/German.png" alt="Card image cap" height="150" width="100">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
-        </section>
+    </div>
+    </section>
     </div>
 
 </body>

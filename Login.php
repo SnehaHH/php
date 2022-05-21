@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("connection.php");
 
 ?>
@@ -31,8 +31,12 @@ if (isset($_POST["login"])) {
     if (count($errors) > 0) {
         echo ("<script>alert('$errors[0]')</script>");
     } else {
-        session_start();
-        header("Location:Feedback.php");
+        
+        $_SESSION['email'] = $em;
+        $_SESSION['userid']=$row["User_Id"];
+        $_SESSION['name']=$row["Name"];
+        $_SESSION['admin']=$row["Is_Admin"];
+        header("Location:homepage.php");
     }
 }
 
@@ -57,8 +61,8 @@ if (isset($_POST["login"])) {
                     </div>
                 </div>
                 <form method="post" action="Login.php" class="login-form" name="form_log">
-                    <input type="email" name="email" placeholder="Email" required/>
-                    <input type="password" name="Pass" placeholder="Password" required/>
+                    <input type="email" name="email" placeholder="Email" required />
+                    <input type="password" name="Pass" placeholder="Password" required />
                     <button type="submit" name="login">login</button>
                     <p class="message">Not registered? <a href="Signup.php">Create an account</a></p>
                 </form>
