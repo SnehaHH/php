@@ -1,0 +1,99 @@
+#keyboard
+{
+    width: 60%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+#heading
+{
+    background-image: url('images/french.png');
+    background-repeat: no-repeat;
+    background-size: 700px 100px;
+    background-position: center;
+    width: 70%;
+    height: 70px;
+    margin: 20px auto 40px;
+}
+h1
+{
+    width: 170px;
+    margin: 10px auto;
+    font-size: 2rem;
+    font-family: Andalé Mono, monospace;
+    border: solid 4px #000000;
+    background-color: #f9fbf7;
+    text-align: center;
+}
+#textfield
+{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 20px;
+    border: solid 4px #000000;
+    font-size: 1rem;
+}
+#accent_row
+{
+    margin-bottom: 13px;
+}
+.key_row
+{
+    display: flex;
+    margin: 4px 3px;
+}
+.key_row button
+{
+    flex-grow: 1;
+    height: 1.7rem;
+    font-size: 1rem;
+}
+.key_row #space
+{
+    margin-bottom: 15px;
+}
+fieldset
+{
+    height: 263px;
+    margin-bottom: 15px;
+    outline: none;
+}
+legend
+{
+    margin-left: 7px;
+    font-family: Andalé Mono, monospace;
+}
+.UseDesc
+{
+    width: 70%;
+    margin: 50px auto;
+    font-size: 1.1rem;
+    font-family: Andalé Mono, monospace;
+    color: black;
+}
+.UseDesc ul
+{
+    margin-top: 7px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    margin-bottom: 7px;
+}
+.UseDesc ul li
+{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.green {background-color:rgb(179, 226, 226)}
+.yellow{background-color:rgb(224, 231, 158)}
+.ctrl{background-color:rgb(243, 183, 242)}
+
+.btn:hover {background-color: #abe4c900}
+.under:hover {background-color: #e09dc6;}
+.capsLock:hover { background-color: #c4aff7}
+.redBut:hover { background-color: #f7c761}
+.extra:hover { background-color: #c4aff7}
