@@ -69,7 +69,7 @@ include("../connection.php");
                 </a>
             </li>
             <li>
-                <a href="delete_student.php">
+                <a href="delete_student.php`">
                     <i class='bx bx-message'></i>
                     <span class="links_name">Delete Student</span>
                 </a>
