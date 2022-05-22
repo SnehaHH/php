@@ -31,11 +31,11 @@ if (isset($_POST["login"])) {
     if (count($errors) > 0) {
         echo ("<script>alert('$errors[0]')</script>");
     } else {
-        
+
         $_SESSION['email'] = $em;
-        $_SESSION['userid']=$row["User_Id"];
-        $_SESSION['name']=$row["Name"];
-        $_SESSION['admin']=$row["Is_Admin"];
+        $_SESSION['userid'] = $row["User_Id"];
+        $_SESSION['name'] = $row["Name"];
+        $_SESSION['admin'] = $row["Is_Admin"];
         header("Location:homepage.php");
     }
 }
@@ -67,6 +67,9 @@ if (isset($_POST["login"])) {
                     <p class="message">Not registered? <a href="Signup.php">Create an account</a></p>
                 </form>
             </div>
+            <div>
+                <!-- snaccs, put cards here -->
+            </div>
         </div>
     </body>
 </body>
@@ -97,6 +100,7 @@ if (isset($_POST["login"])) {
     }
 
     .form {
+        left: 100%;
         position: relative;
         z-index: 1;
         background: #FFFFFF;
@@ -123,8 +127,8 @@ if (isset($_POST["login"])) {
         font-family: "Roboto", sans-serif;
         text-transform: uppercase;
         outline: 0;
-        background-color: #328f8a;
-        background-image: linear-gradient(45deg, #328f8a, #08ac4b);
+        background-color: #3c37f1;
+        background-image: linear-gradient(45deg, #3c37f1, #374b53);
         width: 100%;
         border: 0;
         padding: 15px;
@@ -142,7 +146,7 @@ if (isset($_POST["login"])) {
     }
 
     .form .message a {
-        color: #4CAF50;
+        color: #3c37f1;
         text-decoration: none;
     }
 
@@ -154,8 +158,9 @@ if (isset($_POST["login"])) {
     }
 
     body {
-        background-color: #328f8a;
-        background-image: linear-gradient(45deg, #328f8a, #08ac4b);
+        height: 100vh;
+        background-color: #3c37f1;
+        background-image: linear-gradient(45deg, #3c37f1, #374b53);
         font-family: "Roboto", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

@@ -5,7 +5,88 @@
 <head>
     <title>Morse Code Keyboard - Scribo.com</title>
     <link href="shared.css" rel="stylesheet" type="text/css">
-    <link href="Final_engstyle.css" rel="stylesheet" type="text/css">
+    <style>
+        #keyboard
+{
+    width: 60%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+#heading
+{
+    background-image: url('images/english.png');
+    background-repeat: no-repeat;
+    background-size: 700px 100px;
+    background-position: center;
+    width: 70%;
+    height: 70px;
+    margin: 20px auto 40px;
+}
+h1
+{
+    width: 170px;
+    margin: 10px auto;
+    font-size: 2rem;
+    font-family: Andalé Mono, monospace;
+    border: solid 4px #ce142b;
+    background-color: #f9fbf7;
+    text-align: center;
+}
+#textfield
+{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 20px;
+    border: solid 4px #000000;
+    font-size: 1rem;
+}
+.key_row
+{
+    display: flex;
+    margin: 4px 3px;
+}
+.key_row button
+{
+    flex-grow: 1;
+    height: 1.7rem;
+    font-size: 1rem;
+}
+.key_row #space
+{
+    margin-bottom: 20px;
+}
+fieldset
+{
+    height: 230px;
+    margin-bottom: 15px;
+    outline: none;
+}
+.UseDesc
+{
+    width: 60%;
+    margin: 50px auto 60px;
+    font-size: 1.1rem;
+    font-family: Andalé Mono, monospace;
+    color: black;
+}
+legend
+{
+    margin-left: 7px;
+    font-family: Andalé Mono, monospace;
+}
+
+.green {background-color:rgb(179, 226, 226)}
+.yellow{background-color:rgb(224, 231, 158)}
+
+.btn:hover {background-color: #abe4c900}
+.under:hover {background-color: #e09dc6;}
+.capsLock:hover { background-color: #c4aff7}
+.redBut:hover { background-color: #f7c761}
+.extra:hover { background-color: #c4aff7}
+
+    </style>
 </head>
 
 <body id="body">

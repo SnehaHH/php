@@ -13,10 +13,80 @@ session_start();
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #snackbar {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+        }
 
+        #snackbar.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div id="snackbar">Successfully added to cart</div>
     <div id="mobile-menu-overlay"></div>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -53,142 +123,150 @@ session_start();
         </div>
     </nav>
     <div class="page-body-wrapper">
-       
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="main-banner">
-                            <div class="d-sm-flex justify-content-between">
-                                <div>
-                                    <h1 style="color:white;">GERMAN</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="container-fluid">
-                        <div class="row mt-5">
-                            
-                            <div class="col-sm-6">
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-                                    nam! Neque, tenetur voluptates! Dicta cupiditate nobis sed est
-                                    veritatis doloremque aspernatur sapiente, natus corporis enim
-                                    suscipit labore, consequuntur adipisci ipsa?
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                                    voluptate hic deserunt facere ipsam accusantium debitis quo modi eum
-                                    cumque recusandae perspiciatis quam eveniet voluptas quasi, natus
-                                    aspernatur possimus soluta.
-                                </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-banner">
+                        <div class="d-sm-flex justify-content-between">
+                            <div>
+                                <h1 style="color:white;">GERMAN</h1>
                             </div>
-                            
                         </div>
                     </div>
-                    <div class="container" id="body">
-                        <div class="row mt-5">
-                            <div class="col-sm-6 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">
-                                            With supporting text below as a natural lead-in to additional
-                                            content.
-                                        </p>
-                                        <button type="button" class= "btn btn-primary" id="1"> Add to cart! </button>
-                                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row mt-5">
+
+                        <div class="col-sm-6">
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
+                                nam! Neque, tenetur voluptates! Dicta cupiditate nobis sed est
+                                veritatis doloremque aspernatur sapiente, natus corporis enim
+                                suscipit labore, consequuntur adipisci ipsa?
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+                                voluptate hic deserunt facere ipsam accusantium debitis quo modi eum
+                                cumque recusandae perspiciatis quam eveniet voluptas quasi, natus
+                                aspernatur possimus soluta.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container" id="body">
+                    <div class="row mt-5">
+                        <div class="col-sm-6 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">
+                                        With supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" id="1"> Add to cart! </button>
                                 </div>
                             </div>
-                            <div class="col-sm-6 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">
-                                            With supporting text below as a natural lead-in to additional
-                                            content.
-                                        </p>
-                                        <button type="button" class= "btn btn-primary" id="2"> Add to cart! </button>
-                                    </div>
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">
+                                        With supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" id="2"> Add to cart! </button>
                                 </div>
                             </div>
-                            <div class="col-sm-6 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">
-                                            With supporting text below as a natural lead-in to additional
-                                            content.
-                                        </p>
-                                        <button type="button" class= "btn btn-primary"> Add to cart! </button>
-                                    </div>
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">
+                                        With supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <button type="button" class="btn btn-primary"> Add to cart! </button>
                                 </div>
                             </div>
-                            <div class="col-sm-6 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">
-                                            With supporting text below as a natural lead-in to additional
-                                            content.
-                                        </p>
-                                        <button type="button" class= "btn btn-primary"> Add to cart! </button>
-                                    </div>
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">
+                                        With supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <button type="button" class="btn btn-primary"> Add to cart! </button>
                                 </div>
                             </div>
-                            <div class="col-sm-6 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">
-                                            With supporting text below as a natural lead-in to additional
-                                            content.
-                                        </p>
-                                        <button type="button" class= "btn btn-primary"> Add to cart! </button>
-                                    </div>
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">
+                                        With supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <button type="button" class="btn btn-primary"> Add to cart! </button>
                                 </div>
                             </div>
-                            <div class="col-sm-6 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <p class="card-text">
-                                            With supporting text below as a natural lead-in to additional
-                                            content.
-                                        </p>
-                                        <button type="button" class= "btn btn-primary"> Add to cart! </button>
-                                    </div>
+                        </div>
+                        <div class="col-sm-6 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">
+                                        With supporting text below as a natural lead-in to additional
+                                        content.
+                                    </p>
+                                    <button type="button" class="btn btn-primary"> Add to cart! </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    
+        </div>
     </div>
 
     <script>
         <?php
-        echo "var uid =". $_SESSION['userid'];
+        echo "var uid =" . $_SESSION['userid'];
         ?>
-           
 
-    function addtocart(e)
-
-    {
-        if (e.target.tagName === "BUTTON") {
-            var id=e.target.id;
-            fetch("/cart.php?userid="+uid+"&courseid="+id).then((resp)=>{
-                console.log(resp);
-            })
-
+        function snackBar(message) {
+            var x = document.getElementById("snackbar");
+            x.innerText = message;
+            x.className = "show";
+            setTimeout(function() {
+                x.className = x.className.replace("show", "");
+            }, 3000);
         }
-    }
 
-    document.getElementById("body").addEventListener("click", addtocart);
+        function addtocart(e) {
+            if (e.target.tagName === "BUTTON") {
+                var id = e.target.id;
+                fetch("/cart.php?userid=" + uid + "&courseid=" + id).then((resp) => {
+                    if (resp.status === 200) {
+                        console.log(resp);
+                        snackBar("Successfully added to cart");
+                    } else {
+                        snackBar("You already own this course");
+                    }
+                })
 
-</script>
+            }
+        }
+
+        document.getElementById("body").addEventListener("click", addtocart);
+    </script>
 </body>
 
 </html>

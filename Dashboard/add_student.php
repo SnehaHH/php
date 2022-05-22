@@ -33,7 +33,7 @@ include("../connection.php");
                 </a>
             </li>
             <li>
-                <a href="Upload_course.php" >
+                <a href="Upload_course.php">
                     <i class='bx bx-box'></i>
                     <span class="links_name">Upload course</span>
                 </a>
@@ -103,29 +103,28 @@ include("../connection.php");
                         <ul class="details">
 
                             <form method="post" action="add_student.php">
-                            <input type="text" name="name" placeholder="Name" required />
-                            <input type="email" name="email" placeholder="Email" required />
-                            <button type="submit" name="submit">Upload</button>
+                                <input type="text" name="name" placeholder="Name" required />
+                                <input type="email" name="email" placeholder="Email" required />
+                                <button type="submit" name="submit">Upload</button>
                             </form>
 
                             <?php
-                            $errors=[];
+                            $errors = [];
                             if (isset($_POST["submit"])) {
                                 $name = $_POST["name"];
                                 $email = $_POST["email"];
-                                $pass=(str_replace(' ', '', $name)).(substr($email,0,3));
+                                $pass = (str_replace(' ', '', $name)) . (substr($email, 0, 3));
                                 $query = "SELECT * from user WHERE Email='$email'";
                                 $row = mysqli_query($conn, $query);
                                 if (mysqli_num_rows($row) > 0) {
                                     echo (' <script> alert("User exists.") </script>');
-                                } 
-                                else {
+                                } else {
                                     $query = "INSERT INTO user ( Name, Email, Password, Is_Admin,Created_at,Updated_at) 
                                     VALUES ('$name','$email','$pass','false',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)";
                                     $result = mysqli_query($conn, $query);
                                     echo (' <script> alert("Successfully added!") </script>');
                                 }
-                        }
+                            }
                             ?>
                     </div>
                 </div>
