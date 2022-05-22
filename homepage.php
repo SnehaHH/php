@@ -50,9 +50,15 @@ session_start();
 					if (isset($_SESSION["name"])) {
 						echo ('<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> &nbsp LOGOUT</a>
+						<a class="nav-link" href="checkout.php">  Cart</a>
+
+						</li>
+						<li class="nav-item">
+							
+								<a class="nav-link" href="Logout.php"> LOGOUT</a>
 								
-							</li>');
+							</li>
+							');
 					} else {
 						echo ('<li class="nav-item">
 								<a class="nav-link" href="Login.php">Login/SignUp</a>
@@ -91,7 +97,7 @@ session_start();
 									<a href="#" class="btn btn-secondary mt-3">Learn more</a>
 								</div>
 								<div class="mt-5 mt-lg-0">
-									<img src="images/World-Map-PNG.png" alt="marsmello" class="img-fluid" data-aos="zoom-in-up" height="550" width="550">
+									<img src="images/World-Map-PNG.png" alt="marsmello" class="img-fluid" data-aos="zoom-in-up" height="500" width="500">
 								</div>
 							</div>
 						</div>
@@ -192,9 +198,9 @@ session_start();
 					</div>
 					<div>
 						<div class="d-flex">
-							<a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
-							<a href="#" class="text-small text-white mx-2 footer-link">Customer Support </a>
 							<a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
+							<a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
+							<a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
 						</div>
 					</div>
 				</div>

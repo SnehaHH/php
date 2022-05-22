@@ -9,7 +9,7 @@ session_start();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Languages & Courses</title>
+    <title>English</title>
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link rel="stylesheet" href="css/style.css">
@@ -90,7 +90,7 @@ session_start();
     <div id="mobile-menu-overlay"></div>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <h2 style="color:white"> SCRIBO </h2>
+            <h2 class="scribo-text"> SCRIBO </h2>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
             </button>
@@ -101,7 +101,7 @@ session_start();
                 </div>
                 <ul class="navbar-nav ml-auto align-items-center">
 					<li class="nav-item active">
-						<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="languages.php">Languages</a>
@@ -143,17 +143,9 @@ session_start();
 
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="main-banner">
-                        <div class="d-sm-flex justify-content-between">
-                            <div>
-                                <h1 style="color:white;">GERMAN</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="container-fluid">
+
+                <div class="container-fluid" style="margin-top: 100px">
                     <div class="row mt-5">
 
                         <div class="col-sm-6">
@@ -169,6 +161,9 @@ session_start();
                                 cumque recusandae perspiciatis quam eveniet voluptas quasi, natus
                                 aspernatur possimus soluta.
                             </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="images/german.jpg">
                         </div>
 
                     </div>
@@ -255,7 +250,11 @@ session_start();
 
     <script>
         <?php
-        echo "var uid =" . $_SESSION['userid'];
+
+        if (isset($_SESSION['userid']))
+            echo "var uid =" . $_SESSION['userid'];
+        else
+            echo "var uid = null";
         ?>
 
         function snackBar(message) {
@@ -269,6 +268,10 @@ session_start();
 
         function addtocart(e) {
             if (e.target.tagName === "BUTTON") {
+                if (uid == null) {
+                    snackBar("You are not logged in.");
+                    return;
+                }
                 var id = e.target.id;
                 fetch("/cart.php?userid=" + uid + "&courseid=" + id).then((resp) => {
                     if (resp.status === 200) {
