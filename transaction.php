@@ -3,7 +3,7 @@ session_start();
 include("connection.php");
 $success=$_GET["success"];
 $u=$_SESSION["userid"];
-if($success)
+if($success=="true")
 {
     $query="SELECT * from carts WHERE user_id= '$u'";
     $result = mysqli_query($conn, $query);

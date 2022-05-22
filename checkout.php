@@ -133,33 +133,36 @@ $result = mysqli_query($conn, $query);
                             echo "</td>";
                             echo "</tr>";
                             echo "</table><br>";
+
+
+                            echo '<div class="d-flex w-67 tomove">
+                        <button class="btn btn-primary ml-auto" id="submit" type="button" data-toggle="modal" data-target="#exampleModal">BUY</button>
+                    </div>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">CONFIRM PAYMENT</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <b> Confirm payment of Rs. ' . $t .'</b>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" id="redirect">Confirm</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Go Back</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
                         } else {
                             echo ("Cart is empty.");
                         }
                         ?>
-                        <div class="d-flex w-67 tomove">
-                            <button class="btn btn-primary ml-auto" id="submit" type="button" data-toggle="modal" data-target="#exampleModal">BUY</button>
-                        </div>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">CONFIRM PAYMENT</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <?php echo "<b> Confirm payment of Rs. </b>";
-                                        echo "<b>" . $t . " </b>";   ?>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" id="redirect">Confirm</button>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Go Back</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
 
                     </div>
 
@@ -184,14 +187,11 @@ $result = mysqli_query($conn, $query);
 
 
     <script>
-
-        function finalpay(e)
-        {
-            window.location.replace("payments.php");   
+        function finalpay(e) {
+            window.location.replace("payments.php");
         }
 
-        document.getElementById("redirect").addEventListener("click",finalpay);
-
+        document.getElementById("redirect").addEventListener("click", finalpay);
     </script>
 </body>
 
