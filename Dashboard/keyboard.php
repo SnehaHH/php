@@ -37,13 +37,13 @@ $result = mysqli_query($conn, $query);
         </div>
         <ul class="nav-links">
             <li>
-                <a href="course_list_stu.php" class="active">
+                <a href="course_list_stu.php" >
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">List of Courses</span>
                 </a>
             </li>
             <li>
-                <a href="keyboard.php">
+                <a href="keyboard.php" class="active">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Keyboards</span>
                 </a>
@@ -94,7 +94,7 @@ $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
 
-                                echo '<a href=video.php?courseid='.$row["Course_Id"].'>
+                                echo '<a href=keys.php?courseid='.$row["Course_Id"].'>
                                 <div class="col-sm-3 mx-3">
                                     <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="../images/' . $row["Language"] . '.jpg" height="150" width="200" alt="Card image cap">

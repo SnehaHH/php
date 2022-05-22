@@ -18,7 +18,7 @@ include("../connection.php");
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name"><?php echo($_SESSION["name"]."'s"); ?> Dashboard</span>
+      <span class="logo_name">Dashboard</span>
     </div>
     <ul class="nav-links">
       <li>
@@ -58,7 +58,7 @@ include("../connection.php");
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
+        <span class="logo_name">SCRIBO</span>
       </div>
      
       <div class="profile-details">

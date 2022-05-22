@@ -2,28 +2,20 @@
 <html lang="en" dir="ltr">
 <?php
 session_start();
+$cid = $_GET["courseid"];
 include("../connection.php");
 $id = $_SESSION["userid"];
-$query = "SELECT courses.Course_Id,
-courses.Course_name,
-courses.Language, 
-courses.Description,
-courses.Course_link,
-subscriptions.User_Id,
-subscriptions.Course_Id,
-user.User_Id
-FROM subscriptions 
-INNER JOIN user on user.User_Id = subscriptions.User_Id
-INNER JOIN courses ON courses.Course_Id = subscriptions.Course_Id
-WHERE user.User_Id = '$id' ";
+$query = "SELECT  
+Course_link FROM courses
+WHERE Course_Id = '$cid' ";
 $result = mysqli_query($conn, $query);
+$row=mysqli_fetch_assoc($result);
 ?>
 
 
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo ($_SESSION["name"] . "'s"); ?> Dashboard</title>
@@ -43,7 +35,7 @@ $result = mysqli_query($conn, $query);
                 </a>
             </li>
             <li>
-                <a href="keyboard.php">
+                <a href="course_list.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Keyboards</span>
                 </a>
@@ -83,33 +75,15 @@ $result = mysqli_query($conn, $query);
         </nav>
         <div class="home-content">
             <div class="sales-boxes">
-                <div class="container">
-                    <div class="row">
+                <div class="recent-sales box">
+                    <div class="sales-details">
+                        <ul class="details">
+                          
+                            <video width="640" height="480" controls autoplay>
+                                
+                                <source src="<?php  echo $row["Course_link"]; ?>" type="video/mp4">
 
-                        <?php
-
-
-                        if (mysqli_num_rows($result) > 0) {
-
-
-                            while ($row = mysqli_fetch_assoc($result)) {
-
-                                echo '<a href=video.php?courseid='.$row["Course_Id"].'>
-                                <div class="col-sm-3 mx-3">
-                                    <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="../images/' . $row["Language"] . '.jpg" height="150" width="200" alt="Card image cap">
-                                    <div class="card-body">
-                                    <p class="card-text"> ' . $row["Description"] . '
-                                    </p> 
-                                    </div>
-                                    </div> 
-                                    </div>
-                                    </a>';
-                            }
-                        } else {
-                            echo ("No courses added yet!");
-                        }
-                        ?>
+                            </video>
 
                     </div>
                 </div>
