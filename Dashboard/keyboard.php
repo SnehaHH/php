@@ -107,7 +107,7 @@ $result = mysqli_query($conn, $query);
                                     </a>';
                             }
                         } else {
-                            echo ("No courses added yet!");
+                            echo ("No courses bought yet, so not keyboards avaliable!");
                         }
                         ?>
 

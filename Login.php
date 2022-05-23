@@ -46,6 +46,7 @@ if (isset($_POST["login"])) {
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title> Login </title>
 </head>
 
@@ -56,7 +57,7 @@ if (isset($_POST["login"])) {
             <div class="form">
                 <div class="login">
                     <div class="login-header">
-                        <h3>LOGIN</h3>
+                        <h3><b>LOGIN</b></h3>
                         <p>Please enter your credentials to login.</p>
                     </div>
                 </div>
@@ -67,12 +68,22 @@ if (isset($_POST["login"])) {
                     <p class="message">Not registered? <a href="Signup.php">Create an account</a></p>
                 </form>
             </div>
-            <div>
-                <!-- snaccs, put cards here -->
+            <div style="position:absolute; top: 200px; left: 70px;">
+                <div class="card-header bg-white border-warning mb-3">
+                    <div class="card-header">
+                        Quote
+                    </div>
+                    <div class="card-body" >
+                        <blockquote class="blockquote mb-0">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
-</body>
+
 
 
 <style>
