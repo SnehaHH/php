@@ -17,9 +17,12 @@ INNER JOIN user on user.User_Id = subscriptions.User_Id
 INNER JOIN courses ON courses.Course_Id = subscriptions.Course_Id
 WHERE user.User_Id = '$id' ";
 $result = mysqli_query($conn, $query);
-$a=$_SESSION["userid"];
-$query1="SELECT Profile_pic from user where User_Id='$a'";
-$result1=mysqli_query($conn,$query1);
+$a = $_SESSION["userid"];
+$query1 = "SELECT Profile_pic from user where User_Id='$a'";
+$result1 = mysqli_query($conn, $query1);
+
+$query2="SELECT * from user where User_Id='$a'";
+$result2=mysqli_query($conn, $query2);
 ?>
 
 
@@ -36,40 +39,40 @@ $result1=mysqli_query($conn,$query1);
     <div class="sidebar">
         <div class="logo-details">
             <i class='bx bxl'></i>
-            <span class="logo_name">Dashboard</span>
+            <span class="logo_name"><b>Dashboard</b></span>
         </div>
         <ul class="nav-links">
-        <li>
-        <a href="course_list_stu.php">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">List of Courses</span>
-        </a>
-      </li>
-      <li>
-        <a href="keyboard.php">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Keyboards</span>
-        </a>
-      </li>
-      <li>
-        <a href="help.php">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Help</span>
-        </a>
-      </li>
-      <li>
-        <a href="edit_profile.php">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Edit Profile</span>
-        </a>
-      </li>
-      
-      <li class="log_out">
-        <a href="../Logout.php">
-          <i class='bx bx-log-out'></i>
-          <span class="links_name">Log out</span>
-        </a>
-      </li>
+            <li>
+                <a href="course_list_stu.php">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">List of Courses</span>
+                </a>
+            </li>
+            <li>
+                <a href="keyboard.php">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Keyboards</span>
+                </a>
+            </li>
+            <li>
+                <a href="help.php">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="edit_profile.php">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Edit Profile</span>
+                </a>
+            </li>
+
+            <li class="log_out">
+                <a href="../Logout.php">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
         </ul>
     </div>
     <section class="home-section">
@@ -80,7 +83,7 @@ $result1=mysqli_query($conn,$query1);
             </div>
 
             <div class="profile-details">
-            <img src="data:image/jpg;base64,<?php
+                <img src="data:image/jpg;base64,<?php
                                                 $row = mysqli_fetch_assoc($result1);
                                                 echo  base64_encode($row["Profile_pic"]);
                                                 ?>" alt="">
@@ -92,31 +95,63 @@ $result1=mysqli_query($conn,$query1);
                 <div class="container">
                     <div class="row">
 
+                        <form method="post" action="edit_profile.php" name="form_log" enctype="multipart/form-data">
+                            <input type="text" name="name" value="<?php echo ($_SESSION["name"]); ?>" /><br>
+                            <input type="email" name="email" value="<?php echo ($_SESSION["email"]); ?>" disabled /><br>
+                            <input type="password" name="curr_Pass" placeholder="Old Password" /><br>
+                            <input type="password" name="new_Pass" placeholder="New Password" />
+                            <input type="password" name="con_Pass" placeholder="Retype New Password" /><br>
+
+                            <button type="submit" name="confirm">Confirm</button>
+                        </form>
+
                         <?php
+$name=$currpass=$newpass=$conpass=$ppic="";
+$row=mysqli_fetch_assoc($result2);
+if (isset($_POST["confirm"])) {
+    if($_POST["name"])
+    $name=$_POST["name"];
+
+    if($_POST["curr_Pass"])
+    $currpass=$_POST["curr_Pass"];
+
+    else
+    $currpass=$row["Password"];
+
+    if($_POST["new_Pass"])
+    $newpass=$_POST["new_Pass"];
+
+    else
+    $newpass=null;
+
+    if($_POST["con_Pass"])
+    $conpass=$_POST["con_Pass"];
+
+    else
+    $conpass=null;
 
 
-                        if (mysqli_num_rows($result) > 0) {
 
+    if ($name && $currpass && $newpass && $newpass && $conpass) {
+        if($currpass===$row["Password"] && $conpass===$newpass )
+        {
+        $query1 = "UPDATE user SET Name='$name',Password='$newpass', Updated_at=CURRENT_TIMESTAMP 
+        WHERE User_Id ='$a' ";
+        }
 
-                            while ($row = mysqli_fetch_assoc($result)) {
-
-                                echo '<a href=keys.php?courseid='.$row["Course_Id"].'>
-                                <div class="col-sm-3 mx-3">
-                                    <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="../images/' . $row["Language"] . '.jpg" height="150" width="200" alt="Card image cap">
-                                    <div class="card-body">
-                                    <p class="card-text"> ' . $row["Description"] . '
-                                    </p> 
-                                    </div>
-                                    </div> 
-                                    </div>
-                                    </a>';
-                            }
-                        } else {
-                            echo ("No courses bought yet, so not keyboards avaliable!");
-                        }
-                        ?>
-
+        if (mysqli_query($conn, $query1)) {
+            echo '<script>
+            alert("Edited successfully");
+        </script>';
+        $name=$currpass=$newpass=$conpass=$ppic="";
+        } else {
+            echo '<script>
+            alert("Edited Unsuccessfully");
+        </script>';
+        }
+    }
+}
+?>
                     </div>
                 </div>
             </div>

@@ -17,6 +17,9 @@ INNER JOIN user on user.User_Id = subscriptions.User_Id
 INNER JOIN courses ON courses.Course_Id = subscriptions.Course_Id
 WHERE user.User_Id = '$id' ";
 $result = mysqli_query($conn, $query);
+$a=$_SESSION["userid"];
+$query1="SELECT Profile_pic from user where User_Id='$a'";
+$result1=mysqli_query($conn,$query1);
 ?>
 
 
@@ -32,53 +35,57 @@ $result = mysqli_query($conn, $query);
 <body>
     <div class="sidebar">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">Dashboard</span>
+            <i class='bx bxl'></i>
+            <span class="logo_name"><b>Dashboard</b></span>
         </div>
         <ul class="nav-links">
-            <li>
-                <a href="course_list_stu.php" class="active">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">List of Courses</span>
-                </a>
-            </li>
-            <li>
-                <a href="keyboard.php">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Keyboards</span>
-                </a>
-            </li>
-            <li>
-                <a href="course_list.php">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Tests</span>
-                </a>
-            </li>
-            <li>
-                <a href="course_list.php">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Help</span>
-                </a>
-            </li>
+        <li>
+        <a href="course_list_stu.php">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">List of Courses</span>
+        </a>
+      </li>
+      <li>
+        <a href="keyboard.php">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Keyboards</span>
+        </a>
 
-            <li class="log_out">
-                <a href="../Logout.php">
-                    <i class='bx bx-log-out'></i>
-                    <span class="links_name">Log out</span>
-                </a>
-            </li>
+      </li>
+      <li>
+        <a href="help.php">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Help</span>
+        </a>
+      </li>
+      <li>
+        <a href="edit_profile.php">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Edit Profile</span>
+        </a>
+      </li>
+      
+      <li class="log_out">
+        <a href="../Logout.php">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Log out</span>
+        </a>
+      </li>
         </ul>
     </div>
     <section class="home-section">
         <nav>
             <div class="sidebar-button">
                 <i class='bx bx-menu sidebarBtn'></i>
-                <span class="logo_name">SCRIBO</span>
+                <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
             </div>
 
             <div class="profile-details">
-                <img src="../images/German.png" alt="">
-                <span class="admin_name"><?php echo ($_SESSION["name"]); ?> </span>
+                <img src="data:image/jpg;base64,<?php
+                                                $row = mysqli_fetch_assoc($result1);
+                                                echo  base64_encode($row["Profile_pic"]);
+                                                ?>" alt="">
+                <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
             </div>
         </nav>
         <div class="home-content">
@@ -94,7 +101,7 @@ $result = mysqli_query($conn, $query);
 
                             while ($row = mysqli_fetch_assoc($result)) {
 
-                                echo '<a href=video.php?courseid='.$row["Course_Id"].'>
+                                echo '<a href=video.php?courseid=' . $row["Course_Id"] . '>
                                 <div class="col-sm-3 mx-3">
                                     <div class="card" style="width: 18rem;">
                                     <img class="card-img-top" src="../images/' . $row["Language"] . '.jpg" height="150" width="200" alt="Card image cap">

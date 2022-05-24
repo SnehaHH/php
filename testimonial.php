@@ -1,19 +1,34 @@
 <?php
 session_start();
-
+$id = $_SESSION["userid"];
+include("connection.php");
+$query =
+    "SELECT
+user.User_Id,
+user.Email,
+courses.Course_Id,
+courses.Course_name,
+courses.Price,
+carts.user_id,
+carts.course_id
+FROM user
+INNER JOIN carts ON user.User_Id = carts.user_id
+INNER JOIN courses ON courses.Course_Id = carts.course_id
+WHERE user.User_Id = '$id' ";
+$result = mysqli_query($conn, $query);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Check out</title>
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Payment</title>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -79,46 +94,49 @@ session_start();
 		</div>
 	</nav>
     <div class="page-body-wrapper">
-        <section id="home" class="home" style="background-position: 0-260px">
+        <section id="home" class="home" style="background-position: 0-280px">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="main-banner">
                             <div class="d-sm-flex justify-content-between">
                                 <div>
-                                    <h1 style="color:white;">PAYMENT CONFIRMATION</h1>
+                                    <h1 style="color:white;">CHECKOUT</h1>
                                 </div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-center w-100"> 
-                        <button class="btn btn-primary mx-4" id="suc">SUCCESS</button>
-                        <button class="btn btn-danger mx-5" id="fail">FAILURE</button>
+                        <p>TESTIMONIALS</p>
+
                     </div>
 
                 </div>
             </div>
-        </section>
     </div>
+    </section>
+    </div>
+    <style>
+        .tomove {
+            width: 90%;
+        }
+
+        .modal {
+            position: absolute;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
     <script>
-
-        function success(e)
-        {
-
-            window.location.replace("transaction.php?success=true");
+        function finalpay(e) {
+            window.location.replace("payments.php");
         }
 
-        function failure(e)
-        {
-            window.location.replace("transaction.php?success=false");
-        }
-
-
-    document.getElementById("suc").addEventListener("click",success);
-    document.getElementById("fail").addEventListener("click",failure);
+        document.getElementById("redirect").addEventListener("click", finalpay);
     </script>
-
 </body>
 
 </html>

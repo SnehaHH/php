@@ -20,34 +20,34 @@ include("connection.php");
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div id="mobile-menu-overlay"></div>
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <h2 class="scribo-text"> SCRIBO </h2>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-                    <h2><b>SCRIBO</b></h2>
-                    <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
-                </div>
-                <ul class="navbar-nav ml-auto align-items-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="languages.php">Languages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonial">Testimonials</a>
-                    </li>
+		<div class="container">
+			<h2 class="scribo-text"> SCRIBO </h2>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+				<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+				<h2><b> SCRIBO </b></h2>
+					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
+				</div>
+				<ul class="navbar-nav ml-auto align-items-center">
+					<li class="nav-item active">
+						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="languages.php">Languages</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="faq.php">FAQs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="blogs.php">Blogs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="testimonial.php">Testimonials</a>
+					</li>
 
-                    <?php
+					<?php
                     if (isset($_SESSION["name"])) {
                         echo ('<li class="nav-item">
 							
@@ -65,7 +65,7 @@ include("connection.php");
                         echo ('</li>
 						<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> LOGOUT</a>
+								<a class="nav-link" href="Logout.php"> Logout</a>
 								
 							</li>
 							');
@@ -75,10 +75,10 @@ include("connection.php");
 							</li>');
                     }
                     ?>
-                </ul>
-            </div>
-        </div>
-    </nav>
+				</ul>
+			</div>
+		</div>
+	</nav>
     <div class="page-body-wrapper">
         <section id="home" class="home" style="background-position: 0-260px">
             <div class="container">

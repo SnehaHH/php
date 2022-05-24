@@ -34,39 +34,65 @@ $result = mysqli_query($conn, $query);
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div id="mobile-menu-overlay"></div>
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <h2 style="color:white"> SCRIBO </h2>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-                    <img src="images/logo-dark.svg" class="logo-mobile-menu" alt="logo">
-                    <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
-                </div>
-                <ul class="navbar-nav ml-auto align-items-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="languages.php">Languages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonial">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#plans">About Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+		<div class="container">
+			<h2 class="scribo-text"> SCRIBO </h2>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+				<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+				<h2><b> SCRIBO </b></h2>
+					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
+				</div>
+				<ul class="navbar-nav ml-auto align-items-center">
+					<li class="nav-item active">
+						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="languages.php">Languages</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="faq.php">FAQs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="blogs.php">Blogs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="testimonial.php">Testimonials</a>
+					</li>
+
+					<?php
+                    if (isset($_SESSION["name"])) {
+                        echo ('<li class="nav-item">
+							
+						<a class="nav-link" href="checkout.php">  Cart</a>
+
+						</li>
+                        <li class="nav-item">');
+                        if ($_SESSION['admin'] == 0)
+
+                            echo '<a class="nav-link" href="Dashboard/student_dashboard.php">Dashboard</a>';
+                        else {
+                            echo '<a class="nav-link" href="Dashboard/admin_dashboard.php">Dashboard</a>';
+                        }
+
+                        echo ('</li>
+						<li class="nav-item">
+							
+								<a class="nav-link" href="Logout.php"> Logout</a>
+								
+							</li>
+							');
+                    } else {
+                        echo ('<li class="nav-item">
+								<a class="nav-link" href="Login.php">Login/SignUp</a>
+							</li>');
+                    }
+                    ?>
+				</ul>
+			</div>
+		</div>
+	</nav>
     <div class="page-body-wrapper">
         <section id="home" class="home" style="background-position: 0-280px">
             <div class="container">

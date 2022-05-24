@@ -24,32 +24,33 @@ $row=mysqli_fetch_assoc($result);
 <body>
     <div class="sidebar">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">Dashboard</span>
+            <i class='bx bxl'></i>
+            <span class="logo_name"><b>Dashboard</b></span>
         </div>
         <ul class="nav-links">
             <li>
-                <a href="course_list_stu.php" class="active">
+                <a href="course_list_stu.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">List of Courses</span>
                 </a>
             </li>
             <li>
-                <a href="course_list.php">
+                <a href="keyboard.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Keyboards</span>
                 </a>
+
             </li>
             <li>
-                <a href="course_list.php">
+                <a href="help.php">
                     <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Tests</span>
+                    <span class="links_name">Help</span>
                 </a>
             </li>
             <li>
-                <a href="course_list.php">
+                <a href="edit_profile.php">
                     <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Help</span>
+                    <span class="links_name">Edit Profile</span>
                 </a>
             </li>
 

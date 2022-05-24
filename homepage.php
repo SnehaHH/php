@@ -31,19 +31,19 @@ session_start();
 				</div>
 				<ul class="navbar-nav ml-auto align-items-center">
 					<li class="nav-item active">
-						<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="languages.php">Languages</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#about">FAQs</a>
+						<a class="nav-link" href="faq.php">FAQs</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#projects">Blogs</a>
+						<a class="nav-link" href="blogs.php">Blogs</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#testimonial">Testimonials</a>
+						<a class="nav-link" href="testimonial.php">Testimonials</a>
 					</li>
 
 					<?php
@@ -64,7 +64,7 @@ session_start();
                         echo ('</li>
 						<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> LOGOUT</a>
+								<a class="nav-link" href="Logout.php"> Logout</a>
 								
 							</li>
 							');

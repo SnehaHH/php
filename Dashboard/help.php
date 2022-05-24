@@ -36,7 +36,7 @@ $result1=mysqli_query($conn,$query1);
     <div class="sidebar">
         <div class="logo-details">
             <i class='bx bxl'></i>
-            <span class="logo_name">Dashboard</span>
+            <span class="logo_name"><b>Dashboard</b></span>
         </div>
         <ul class="nav-links">
         <li>
@@ -50,6 +50,7 @@ $result1=mysqli_query($conn,$query1);
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Keyboards</span>
         </a>
+
       </li>
       <li>
         <a href="help.php">
@@ -80,7 +81,7 @@ $result1=mysqli_query($conn,$query1);
             </div>
 
             <div class="profile-details">
-            <img src="data:image/jpg;base64,<?php
+                <img src="data:image/jpg;base64,<?php
                                                 $row = mysqli_fetch_assoc($result1);
                                                 echo  base64_encode($row["Profile_pic"]);
                                                 ?>" alt="">
@@ -92,30 +93,8 @@ $result1=mysqli_query($conn,$query1);
                 <div class="container">
                     <div class="row">
 
-                        <?php
-
-
-                        if (mysqli_num_rows($result) > 0) {
-
-
-                            while ($row = mysqli_fetch_assoc($result)) {
-
-                                echo '<a href=keys.php?courseid='.$row["Course_Id"].'>
-                                <div class="col-sm-3 mx-3">
-                                    <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="../images/' . $row["Language"] . '.jpg" height="150" width="200" alt="Card image cap">
-                                    <div class="card-body">
-                                    <p class="card-text"> ' . $row["Description"] . '
-                                    </p> 
-                                    </div>
-                                    </div> 
-                                    </div>
-                                    </a>';
-                            }
-                        } else {
-                            echo ("No courses bought yet, so not keyboards avaliable!");
-                        }
-                        ?>
+                    
+                    <p>HELP CONTENTS</p>
 
                     </div>
                 </div>

@@ -3,6 +3,9 @@
 <?php
 session_start();
 include("../connection.php");
+$a=$_SESSION["userid"];
+$query="SELECT Profile_pic from user where User_Id='$a'";
+$result=mysqli_query($conn,$query);
 ?>
 
 
@@ -17,8 +20,8 @@ include("../connection.php");
 <body>
   <div class="sidebar">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">Dashboard</span>
+      <i class='bx bxl'></i>
+      <span class="logo_name"><b>Dashboard</b></span>
     </div>
     <ul class="nav-links">
       <li>
@@ -28,21 +31,22 @@ include("../connection.php");
         </a>
       </li>
       <li>
-        <a href="course_list.php">
+        <a href="keyboard.php">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Keyboards</span>
         </a>
       </li>
+
       <li>
-        <a href="course_list.php">
+        <a href="help.php">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Tests</span>
+          <span class="links_name">Help</span>
         </a>
       </li>
       <li>
-        <a href="course_list.php">
+        <a href="edit_profile.php">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Help</span>
+          <span class="links_name">Edit Profile</span>
         </a>
       </li>
       
@@ -58,12 +62,15 @@ include("../connection.php");
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="logo_name">SCRIBO</span>
+        <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
       </div>
      
       <div class="profile-details">
-        <img src="../images/German.png" alt="">
-        <span class="admin_name"><?php echo($_SESSION["name"]);?> </span>
+        <img src="data:image/jpg;base64,<?php
+        $row=mysqli_fetch_assoc($result);
+        echo  base64_encode($row["Profile_pic"]); 
+        ?>" alt="">
+        <span class="admin_name"><?php echo($_SESSION["name"]);?></span>
       </div>
     </nav>
     <div class="sales-boxes">
