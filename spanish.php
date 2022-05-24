@@ -97,46 +97,55 @@ include("connection.php");
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-                    <img src="images/logo-dark.svg" class="logo-mobile-menu" alt="logo">
+                    <h2><b> SCRIBO </b></h2>
                     <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
                 </div>
                 <ul class="navbar-nav ml-auto align-items-center">
-					<li class="nav-item active">
-						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="languages.php">Languages</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#about">FAQs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#projects">Blogs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#testimonial">Testimonials</a>
-					</li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="languages.php">Languages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonial">Testimonials</a>
+                    </li>
 
-					<?php
-					if (isset($_SESSION["name"])) {
-						echo ('<li class="nav-item">
+                    <?php
+                    if (isset($_SESSION["name"])) {
+                        echo ('<li class="nav-item">
 							
 						<a class="nav-link" href="checkout.php">  Cart</a>
 
 						</li>
+                        <li class="nav-item">');
+                        if ($_SESSION['admin'] == 0)
+
+                            echo '<a class="nav-link" href="Dashboard/student_dashboard.php">Dashboard</a>';
+                        else {
+                            echo '<a class="nav-link" href="Dashboard/admin_dashboard.php">Dashboard</a>';
+                        }
+
+                        echo ('</li>
 						<li class="nav-item">
 							
 								<a class="nav-link" href="Logout.php"> LOGOUT</a>
 								
 							</li>
 							');
-					} else {
-						echo ('<li class="nav-item">
+                    } else {
+                        echo ('<li class="nav-item">
 								<a class="nav-link" href="Login.php">Login/SignUp</a>
 							</li>');
-					}
-					?>
-				</ul>
+                    }
+                    ?>
+                </ul>
             </div>
         </div>
     </nav>
@@ -174,19 +183,19 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Spanish'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Spanish'";
+                                                            $result = mysqli_query($conn, $query);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                echo $row['Course_name'];
+                                                                break;
+                                                            }  ?> </h5>
                                     <p class="card-text">
                                         With supporting text below as a natural lead-in to additional
                                         content.
                                         <?php $query = "SELECT Price from courses WHERE Level = 'A1' AND Language='Spanish'";
                                         $result = mysqli_query($conn, $query);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<br> <b>Rs. ".$row['Price']."</b></br>";
+                                            echo "<br> <b>Rs. " . $row['Price'] . "</b></br>";
                                             break;
                                         }  ?>
                                     </p>
@@ -197,19 +206,19 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Spanish'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Spanish'";
+                                                            $result = mysqli_query($conn, $query);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                echo $row['Course_name'];
+                                                                break;
+                                                            }  ?> </h5>
                                     <p class="card-text">
                                         With supporting text below as a natural lead-in to additional
                                         content.
                                         <?php $query = "SELECT Price from courses WHERE Level = 'A2' AND Language='Spanish'";
                                         $result = mysqli_query($conn, $query);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<br> <b>Rs. ".$row['Price']."</b></br>";
+                                            echo "<br> <b>Rs. " . $row['Price'] . "</b></br>";
                                             break;
                                         }  ?>
                                     </p>
@@ -220,19 +229,19 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Spanish'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Spanish'";
+                                                            $result = mysqli_query($conn, $query);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                echo $row['Course_name'];
+                                                                break;
+                                                            }  ?> </h5>
                                     <p class="card-text">
                                         With supporting text below as a natural lead-in to additional
                                         content.
                                         <?php $query = "SELECT Price from courses WHERE Level = 'B1' AND Language='Spanish'";
                                         $result = mysqli_query($conn, $query);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<br> <b>Rs. ".$row['Price']."</b></br>";
+                                            echo "<br> <b>Rs. " . $row['Price'] . "</b></br>";
                                             break;
                                         }  ?>
                                     </p>
@@ -243,19 +252,19 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Spanish'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Spanish'";
+                                                            $result = mysqli_query($conn, $query);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                echo $row['Course_name'];
+                                                                break;
+                                                            }  ?> </h5>
                                     <p class="card-text">
                                         With supporting text below as a natural lead-in to additional
                                         content.
                                         <?php $query = "SELECT Price from courses WHERE Level = 'B2' AND Language='Spanish'";
                                         $result = mysqli_query($conn, $query);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<br> <b>Rs. ".$row['Price']."</b></br>";
+                                            echo "<br> <b>Rs. " . $row['Price'] . "</b></br>";
                                             break;
                                         }  ?>
                                     </p>
@@ -266,19 +275,19 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Spanish'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Spanish'";
+                                                            $result = mysqli_query($conn, $query);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                echo $row['Course_name'];
+                                                                break;
+                                                            }  ?> </h5>
                                     <p class="card-text">
                                         With supporting text below as a natural lead-in to additional
                                         content.
                                         <?php $query = "SELECT Price from courses WHERE Level = 'C1' AND Language='Spanish'";
                                         $result = mysqli_query($conn, $query);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<br> <b>Rs. ".$row['Price']."</b></br>";
+                                            echo "<br> <b>Rs. " . $row['Price'] . "</b></br>";
                                             break;
                                         }  ?>
                                     </p>
@@ -289,19 +298,19 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Spanish'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Spanish'";
+                                                            $result = mysqli_query($conn, $query);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                                echo $row['Course_name'];
+                                                                break;
+                                                            }  ?> </h5>
                                     <p class="card-text">
                                         With supporting text below as a natural lead-in to additional
                                         content.
                                         <?php $query = "SELECT Price from courses WHERE Level = 'C2' AND Language='Spanish'";
                                         $result = mysqli_query($conn, $query);
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo "<br> <b>Rs. ".$row['Price']."</b></br>";
+                                            echo "<br> <b>Rs. " . $row['Price'] . "</b></br>";
                                             break;
                                         }  ?>
                                     </p>
@@ -314,25 +323,30 @@ include("connection.php");
             </div>
         </div>
     </div>
-    <footer class="footer" style ="margin-top:50px">
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
-					<div class="d-flex align-items-center">
-						<h3 class="scribo-text"> SCRIBO </h3>
-						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
-					</div>
-					<div>
-						<div class="d-flex">
-							<a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
-							<a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
-							<a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <footer class="footer" style="margin-top:50px">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <h3 class="scribo-text"> SCRIBO </h3>
+                        <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+                    </div>
+                    <div>
+                        <div class="d-flex">
+                            <a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
+                            <a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
+                            <a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="vendors/base/vendor.bundle.base.js"></script>
+    <script src="vendors/owl.carousel/js/owl.carousel.js"></script>
+    <script src="vendors/aos/js/aos.js"></script>
+    <script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
+    <script src="js/template.js"></script>
     <script>
         <?php
 

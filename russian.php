@@ -96,13 +96,13 @@ include("connection.php");
                 <span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-                    <img src="images/logo-dark.svg" class="logo-mobile-menu" alt="logo">
-                    <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
-                </div>
-                <ul class="navbar-nav ml-auto align-items-center">
+				<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+				<h2><b> SCRIBO </b></h2>
+					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
+				</div>
+				<ul class="navbar-nav ml-auto align-items-center">
 					<li class="nav-item active">
-						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="languages.php">Languages</a>
@@ -118,26 +118,35 @@ include("connection.php");
 					</li>
 
 					<?php
-					if (isset($_SESSION["name"])) {
-						echo ('<li class="nav-item">
+                    if (isset($_SESSION["name"])) {
+                        echo ('<li class="nav-item">
 							
 						<a class="nav-link" href="checkout.php">  Cart</a>
 
 						</li>
+                        <li class="nav-item">');
+                        if ($_SESSION['admin'] == 0)
+
+                            echo '<a class="nav-link" href="Dashboard/student_dashboard.php">Dashboard</a>';
+                        else {
+                            echo '<a class="nav-link" href="Dashboard/admin_dashboard.php">Dashboard</a>';
+                        }
+
+                        echo ('</li>
 						<li class="nav-item">
 							
 								<a class="nav-link" href="Logout.php"> LOGOUT</a>
 								
 							</li>
 							');
-					} else {
-						echo ('<li class="nav-item">
+                    } else {
+                        echo ('<li class="nav-item">
 								<a class="nav-link" href="Login.php">Login/SignUp</a>
 							</li>');
-					}
-					?>
+                    }
+                    ?>
 				</ul>
-            </div>
+			</div>
         </div>
     </nav>
     <div class="page-body-wrapper">
@@ -333,6 +342,11 @@ include("connection.php");
 			</div>
 		</div>
 	</footer>
+    <script src="vendors/base/vendor.bundle.base.js"></script>
+	<script src="vendors/owl.carousel/js/owl.carousel.js"></script>
+	<script src="vendors/aos/js/aos.js"></script>
+	<script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
+	<script src="js/template.js"></script>
     <script>
         <?php
 
