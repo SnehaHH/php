@@ -81,10 +81,10 @@ $result = mysqli_query($conn, $query);
         </ul>
   </div>
   <section class="home-section">
-    <nav>
+  <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
+        <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
       </div>
 
       <div class="profile-details">
