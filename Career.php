@@ -104,19 +104,19 @@ include("Career_form.php");
                         <label >Full Name</label>
                         <input value="<?php if (!$name_error) {
                             echo $name1;
-                        } ?>" type="text" name="name" class="form-control form-control-md">
+                        } ?>" type="text" name="name" class="form-control form-control-md" required>
                         <small> <?php echo $name_error; ?> </small>
                     </div>
                     <div class="form-group">
                         <label>Phone Number</label>
                         <input value="<?php if (!$phone_error) {
                             echo $phone1;
-                        } ?>" type="text" name="phone" class="form-control form-control-md">
+                        } ?>" type="text" name="phone" class="form-control form-control-md" required>
                         <small> <?php echo $phone_error; ?> </small>
                     </div>
                     <div class="form-group">
                         <label>Language</label>
-                        <select name="language" class="form-control form-control-md">
+                        <select name="language" class="form-control form-control-md" required>
                             <option value="">None</option>
                             <option value="English">English</option>
                             <option value="French">French</option>
@@ -133,14 +133,14 @@ include("Career_form.php");
                         <label>Highest Language Qualification</label>
                         <input value="<?php if (!$qua_error) {
                             echo $qua;
-                        } ?>" type="text" name="quali" class="form-control form-control-md">
+                        } ?>" type="text" name="quali" class="form-control form-control-md" required>
                         <small> <?php echo $qua_error; ?> </small>
                     </div>
                     <div class="form-group">
                         <label>Please upload your CV</label>
                         <input value="<?php if (!$cv_error) {
                             echo $cv;
-                        } ?>" type="file" name="cv" class="form-control form-control-md">
+                        } ?>" type="file" name="cv" class="form-control form-control-md" required>
                         <small> <?php echo $cv_error; ?> </small>
                     </div>
                     <input class="btn btn-primary" type="submit" value="Submit" name="add">

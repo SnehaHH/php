@@ -102,7 +102,7 @@ include("connection.php");
 				</div>
                 <ul class="navbar-nav ml-auto align-items-center">
 					<li class="nav-item active">
-						<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="languages.php">Languages</a>

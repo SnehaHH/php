@@ -103,7 +103,7 @@ session_start();
 										<br>
 										Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 									</p>
-									<a href="#" class="btn btn-secondary mt-3">Learn more</a>
+									
 								</div>
 								<div class="mt-5 mt-lg-0">
 									<img src="images/World-Map-PNG.png" alt="marsmello" class="img-fluid" data-aos="zoom-in-up" height="500" width="500">

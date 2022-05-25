@@ -102,7 +102,7 @@ include("connection.php");
 				</div>
                 <ul class="navbar-nav ml-auto align-items-center">
 					<li class="nav-item active">
-						<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="languages.php">Languages</a>
@@ -160,17 +160,9 @@ include("connection.php");
                     <div class="row mt-5">
 
                         <div class="col-sm-6">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-                                nam! Neque, tenetur voluptates! Dicta cupiditate nobis sed est
-                                veritatis doloremque aspernatur sapiente, natus corporis enim
-                                suscipit labore, consequuntur adipisci ipsa?
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                                voluptate hic deserunt facere ipsam accusantium debitis quo modi eum
-                                cumque recusandae perspiciatis quam eveniet voluptas quasi, natus
-                                aspernatur possimus soluta.
+                            <p style="text-align:justify";>
+                            German (Deutsch, is a West Germanic language of the Indo-European language family, mainly spoken in Central Europe. It is the most widely spoken and official or co-official language in Germany, Austria, Switzerland, Liechtenstein, and the Italian province of South Tyrol. It is also a co-official language of Luxembourg and Belgium, as well as a national language in Namibia. German is most similar to other languages within the West Germanic language branch, including Afrikaans, Dutch, English, the Frisian languages, Low German, Luxembourgish, Scots, and Yiddish. It also contains close similarities in vocabulary to some languages in the North Germanic group, such as Danish, Norwegian, and Swedish. German is the second most widely spoken Germanic language after English.
+                            <a href ="https://en.wikipedia.org/wiki/German_language"> For more</a>
                             </p>
                         </div>
                         <div class="col-sm-6">
@@ -184,22 +176,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='German'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='German'";
                                                             $result = mysqli_query($conn, $query);
                                                             while ($row = mysqli_fetch_assoc($result)) {
                                                                 echo $row['Course_name'];
                                                                 break;
-                                                            }  ?> </h5>
+                                                            }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
+                                    Through this course, you will be able to use familiar, everyday expressions along with simple sentences which relate to handling core needs. You will be able to hold very simple, elementary conversations with others in German.
 
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='German'";
+                                      <br>  <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='German'";
                                         $result = mysqli_query($conn, $query);
                                         $row = mysqli_fetch_assoc($result);
                                         $cid = $row["Course_Id"];
                                         echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
-                                    </p>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>

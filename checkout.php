@@ -23,6 +23,7 @@ $result = mysqli_query($conn, $query);
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Check out</title>
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
@@ -109,9 +110,12 @@ $result = mysqli_query($conn, $query);
                         <?php
                         $t = 0;
                         if (mysqli_num_rows($result) > 0) {
-                            echo "<table class='table table-hover'>";
+                            echo '<table class="table table-hover" id="check">';
 
                             echo "<tr>";
+                            echo "<th>";
+                            echo "Delete";
+                            echo "</th>";
                             echo "<th>";
                             echo "Course Id";
                             echo "</th>";
@@ -130,6 +134,9 @@ $result = mysqli_query($conn, $query);
 
                                 echo "<tr>";
                                 echo "<td>";
+                                echo "<i class='bi-dash-circle' id='". $row['course_id']."'></i>";
+                                echo "</td>";
+                                echo "<td>";
                                 echo $row["course_id"];
                                 echo "</td>";
                                 echo "<td>";
@@ -145,6 +152,9 @@ $result = mysqli_query($conn, $query);
                                 $t = $t + $row["Price"];
                             }
                             echo "<tr>";
+                            echo "<td>";
+                            echo "";
+                            echo "</td>";
                             echo "<td>";
                             echo "";
                             echo "</td>";
@@ -185,7 +195,7 @@ $result = mysqli_query($conn, $query);
                         </div>
                     </div>';
                         } else {
-                            echo (" <h2><b> Cart is empty. </h2></b>");
+                            echo (" <h2 class='mt-5'><b> Cart is empty. </h2></b>");
                         }
                         ?>
 
@@ -197,6 +207,25 @@ $result = mysqli_query($conn, $query);
     </div>
     </section>
     </div>
+    <footer class="footer" style="margin-top:50px">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <h3 class="scribo-text"> SCRIBO </h3>
+                        <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+                    </div>
+                    <div>
+                        <div class="d-flex">
+                            <a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
+                            <a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
+                            <a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <style>
         .tomove {
             width: 90%;
@@ -213,11 +242,20 @@ $result = mysqli_query($conn, $query);
 
 
     <script>
+
+        function delete_course(e)
+        {
+            var cid=e.target.id;
+            fetch("deletecartitem.php?cid="+cid).then(()=>{
+                location.reload();   
+            })
+        }
         function finalpay(e) {
             window.location.replace("payments.php");
         }
 
         document.getElementById("redirect").addEventListener("click", finalpay);
+        document.getElementById("check").addEventListener("click", delete_course);
     </script>
 </body>
 

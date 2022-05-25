@@ -28,6 +28,7 @@ $result1=mysqli_query($conn,$query1);
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo ($_SESSION["name"] . "'s"); ?> Dashboard</title>
 </head>
@@ -41,25 +42,26 @@ $result1=mysqli_query($conn,$query1);
         <ul class="nav-links">
         <li>
         <a href="course_list_stu.php">
-          <i class='bx bx-grid-alt'></i>
+        <i class="bi-list-stars"></i>
           <span class="links_name">List of Courses</span>
         </a>
       </li>
       <li>
         <a href="keyboard.php">
-          <i class='bx bx-grid-alt'></i>
+        <i class="bi-keyboard"></i>
           <span class="links_name">Keyboards</span>
         </a>
       </li>
+
       <li>
         <a href="help.php">
-          <i class='bx bx-grid-alt'></i>
+        <i class="bi-info-lg"></i>
           <span class="links_name">Help</span>
         </a>
       </li>
       <li>
         <a href="edit_profile.php">
-          <i class='bx bx-grid-alt'></i>
+        <i class='bx bx-user'></i>
           <span class="links_name">Edit Profile</span>
         </a>
       </li>
