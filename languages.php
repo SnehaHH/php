@@ -31,10 +31,10 @@ include("connection.php");
 					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
 				</div>
 				<ul class="navbar-nav ml-auto align-items-center">
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="languages.php">Languages</a>
 					</li>
 					<li class="nav-item">

@@ -10,7 +10,7 @@ include("connection.php");
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Languages & Courses</title>
+    <title>Blogs</title>
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link
@@ -35,7 +35,7 @@ include("connection.php");
 					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
 				</div>
 				<ul class="navbar-nav ml-auto align-items-center">
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
@@ -44,7 +44,7 @@ include("connection.php");
 					<li class="nav-item">
 						<a class="nav-link" href="faq.php">FAQs</a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item active">
 						<a class="nav-link" href="blogs.php">Blogs</a>
 					</li>
 					<li class="nav-item">

@@ -185,7 +185,7 @@ $result = mysqli_query($conn, $query);
                         </div>
                     </div>';
                         } else {
-                            echo ("Cart is empty.");
+                            echo (" <h2><b> Cart is empty. </h2></b>");
                         }
                         ?>
 

@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 
-
+<?php
+session_start();
+include("../connection.php");
+$a = $_SESSION["userid"];
+$query1 = "SELECT Profile_pic from user where User_Id='$a'";
+$result1 = mysqli_query($conn, $query1);
+?>
 <?php
 
 include("../connection.php");
@@ -13,17 +19,18 @@ $result = mysqli_query($conn, $query);
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Admin Dashboard</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="dashboard.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Admin Dashboard</title>
 </head>
 
 <body>
     <div class="sidebar">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
+            <i class='bx bxl'></i>
             <span class="logo_name">Admin Dashboard</span>
         </div>
         <ul class="nav-links">
@@ -34,21 +41,9 @@ $result = mysqli_query($conn, $query);
                 </a>
             </li>
             <li>
-                <a href="Upload_course.php">
-                    <i class='bx bx-box'></i>
-                    <span class="links_name">Upload course</span>
-                </a>
-            </li>
-            <li>
-                <a href="edit_course.php" class="active">
+                <a href="edit_course.php">
                     <i class='bx bx-list-ul'></i>
                     <span class="links_name">Edit Course</span>
-                </a>
-            </li>
-            <li>
-                <a href="delete_course.php">
-                    <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Delete Course</span>
                 </a>
             </li>
             <li>
@@ -91,8 +86,11 @@ $result = mysqli_query($conn, $query);
             </div>
 
             <div class="profile-details">
-                <!--<img src="images/profile.jpg" alt="">-->
-                <span class="admin_name">Prem Shahi</span>
+                <img src="data:image/jpg;base64,<?php
+                                                $row = mysqli_fetch_assoc($result1);
+                                                echo  base64_encode($row["Profile_pic"]);
+                                                ?>" alt="">
+                <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
                 <i class='bx bx-chevron-down'></i>
             </div>
         </nav>

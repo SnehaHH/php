@@ -101,21 +101,22 @@ include("connection.php");
                     <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
                 </div>
                 <ul class="navbar-nav ml-auto align-items-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="languages.php">Languages</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonial">Testimonials</a>
-                    </li>
+					<li class="nav-item active">
+						<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="languages.php">Languages</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="faq.php">FAQs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="blogs.php">Blogs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="testimonial.php">Testimonials</a>
+					</li>
+
 
                     <?php
                     if (isset($_SESSION["name"])) {
