@@ -82,7 +82,7 @@ $result=mysqli_query($conn,$query);
         echo  base64_encode($row["Profile_pic"]); 
         ?>" alt="">
         <span class="admin_name"><?php echo($_SESSION["name"]);?></span>
-        <i class='bx bx-chevron-down'></i>
+       
       </div>
     </nav>
     <div class="sales-boxes">
