@@ -96,10 +96,10 @@ $result1=mysqli_query($conn,$query1);
 
 
                         if (mysqli_num_rows($result) > 0) {
-
+                            $languages = [];
 
                             while ($row = mysqli_fetch_assoc($result)) {
-
+                                if(!isset($languages[$row["Language"]]))
                                 echo '<a href=keys.php?courseid='.$row["Course_Id"].'>
                                 <div class="col-sm-3 mx-3">
                                     <div class="card" style="width: 18rem;">
@@ -111,6 +111,7 @@ $result1=mysqli_query($conn,$query1);
                                     </div> 
                                     </div>
                                     </a>';
+                                $languages[$row["Language"]] = true;
                             }
                         } else {
                             echo ("No courses bought yet, so not keyboards avaliable!");
