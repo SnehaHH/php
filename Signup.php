@@ -74,18 +74,13 @@ if (isset($_POST["login"])) {
                 </form>
             </div>
 
-            <div style="position:absolute; top: 200px; left: 70px;">
-                <div class="card-header bg-white border-warning mb-3">
-                    <div class="card-header">
-                        Quote
-                    </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                        </blockquote>
-                    </div>
-                </div>
+            <div style="position:absolute; top: 200px; left: 200px;">
+               
+                    
+                    
+                        <img src="images/PolyGlot.png" height="420" width="500" >
+                   
+                
             </div>
 
         </div>
@@ -124,7 +119,7 @@ if (isset($_POST["login"])) {
             background: #FFFFFF;
             max-width: 360px;
             margin: 0 auto 100px;
-            padding: 45px;
+            padding: 60px;
             text-align: center;
             box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }

@@ -96,7 +96,7 @@ include("connection.php");
 
                         <div class="card my-5">
                             <a href="english.php">
-                                <img class="card-img-top" src="" alt="Card image cap" height="150" width="100">
+                            <img class="card-img-top" src="images/engly.png" alt="Card image cap" height="300">
                                 <div class="card-body">
                                     <h5 class="card-title"><b>English</b></h5>
                             </a>
@@ -113,7 +113,7 @@ include("connection.php");
 
                     <div class="card my-5">
                         <a href="french.php">
-                            <img class="card-img-top" src="" alt="Card image cap" height="150" width="100">
+                            <img class="card-img-top" src="images/fre.png" alt="Card image cap" height="300">
                             <div class="card-body">
                                 <h5 class="card-title"><b>FRENCH</b></h5>
                         </a>
@@ -130,7 +130,7 @@ include("connection.php");
                 </div>
                 <div class="card my-5">
                     <a href="german.php">
-                        <img class="card-img-top" src="" alt="Card image cap" height="150" width="100">
+                        <img class="card-img-top" src="images/ger.png" alt="Card image cap" height="300">
                         <div class="card-body">
                             <h5 class="card-title"><b>GERMAN</b></h5>
                     </a>
@@ -147,7 +147,7 @@ include("connection.php");
             </div>
             <div class="card my-5">
                 <a href="greek.php">
-                    <img class="card-img-top" src="" alt="Card image cap" height="150" width="100">
+                    <img class="card-img-top" src="images/ger.jpg" alt="Card image cap" height="300">
                     <div class="card-body">
                         <h5 class="card-title"><b>GREEK</b></h5>
                 </a>
@@ -164,7 +164,7 @@ include("connection.php");
     </div>
     <div class="card my-5">
         <a href="russian.php">
-            <img class="card-img-top" src="" alt="Card image cap" height="150" width="100">
+        <img class="card-img-top" src="images/russ.png" alt="Card image cap" height="300">
             <div class="card-body">
                 <h5 class="card-title"><b>RUSSIAN</b></h5>
         </a>
@@ -181,7 +181,7 @@ include("connection.php");
     </div>
     <div class="card my-5">
         <a href="spanish.php">
-            <img class="card-img-top" src="" alt="Card image cap" height="150" width="100">
+        <img class="card-img-top" src="images/spa.png" alt="Card image cap" height="300">
             <div class="card-body">
                 <h5 class="card-title"><b>SPANISH</b></h5>
         </a>

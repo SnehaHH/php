@@ -96,27 +96,27 @@ include("connection.php");
                 <span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-				<h2><b> SCRIBO </b></h2>
-					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
-				</div>
+                <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+                    <h2><b> SCRIBO </b></h2>
+                    <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
+                </div>
                 <ul class="navbar-nav ml-auto align-items-center">
-					<li class="nav-item active">
-						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="languages.php">Languages</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="faq.php">FAQs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="blogs.php">Blogs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="testimonial.php">Testimonials</a>
-					</li>
-					<?php
+                    <li class="nav-item active">
+                        <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="languages.php">Languages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.php">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.php">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonial.php">Testimonials</a>
+                    </li>
+                    <?php
                     if (isset($_SESSION["name"])) {
                         echo ('<li class="nav-item">
 							
@@ -144,8 +144,8 @@ include("connection.php");
 							</li>');
                     }
                     ?>
-				</ul>
-			</div>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="page-body-wrapper">
@@ -158,21 +158,15 @@ include("connection.php");
                     <div class="row mt-5">
 
                         <div class="col-sm-6">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-                                nam! Neque, tenetur voluptates! Dicta cupiditate nobis sed est
-                                veritatis doloremque aspernatur sapiente, natus corporis enim
-                                suscipit labore, consequuntur adipisci ipsa?
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                                voluptate hic deserunt facere ipsam accusantium debitis quo modi eum
-                                cumque recusandae perspiciatis quam eveniet voluptas quasi, natus
-                                aspernatur possimus soluta.
+                            <p style="text-align:justify" ;>
+                                <b>Russian</b> (Russian: русский язык, romanized: russkiy yazyk) is an East Slavic language mainly spoken across Russia. It is the native language of the Russians, and belongs to the Indo-European language family. It is one of four living East Slavic languages, and is also a part of the larger Balto-Slavic languages. Besides Russia itself, Russian is an official language in Belarus, Kazakhstan, and Kyrgyzstan, and is used widely as a lingua franca throughout Ukraine, the Caucasus, Central Asia, and to some extent in the Baltic states. It was the de facto language of the former Soviet Union, and continues to be used in public life with varying proficiency in all of the post-Soviet states.
+
+                                Russian has over 258 million total speakers worldwide. It is the most spoken Slavic language, and the most spoken native language in Europe, as well as the most geographically widespread language of Eurasia. It is the world's seventh-most spoken language by number of native speakers, and the world's eighth-most spoken language by total number of speakers. Russian is one of two official languages aboard the International Space Station, as well as one of the six official languages of the United Nations.
+                                <a href="https://en.wikipedia.org/wiki/Russian_language"> For more.</a>
                             </p>
                         </div>
                         <div class="col-sm-6">
-                            <img src="images/german.jpg">
+                        <img src="images/Russian.png" height="380" width="400">
                         </div>
 
                     </div>
@@ -182,21 +176,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Russian'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid=$row["Course_Id"];
-                                        echo "<br> <b>Rs. ".$row['Price']."</b></br>"; ?>
-                                    </p>
+                                    This is the level of Russian for beginners. You will be able to understand and use common phrases and topics of everyday communication in Russian after completing this level.
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='Russian'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -204,21 +198,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Russian'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A2' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid=$row["Course_Id"];
-                                        echo "<br> <b>Rs. ".$row['Price']."</b></br>"; ?>
-                                    </p>
+                                    A2 is a lower-intermediate level in which you will learn to converse on everyday topics. You will be able to hold a basic conversation with a native speaker.
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A2' AND Language='Russian'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -226,21 +220,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Russian'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B1' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid=$row["Course_Id"];
-                                        echo "<br> <b>Rs. ".$row['Price']."</b></br>"; ?>
-                                    </p>
+                                    This is an intermediate level of Russian. You will learn how to use Russian in your professional life, how to freely express yourself in Russian, about Russia's cultural diversity, and much more.
+
+                                        <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B1' AND Language='Russian'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -248,21 +242,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Russian'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid=$row["Course_Id"];
-                                        echo "<br> <b>Rs. ".$row['Price']."</b></br>"; ?>
-                                    </p>
+                                    This is the upper-intermediate level of Russian, and it is one of the most important levels. When expressing yourself in Russian, you will gain fluency and spontaneity.
+
+                                       <br> <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='Russian'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -270,21 +264,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Russian'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid=$row["Course_Id"];
-                                        echo "<br> <b>Rs. ".$row['Price']."</b></br>"; ?>
-                                    </p>
+                                    This level marks your entry into the Russian language proficiency levels. You will progress through this complex level and achieve complete autonomy in communicating in Russian.
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='Russian'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -292,21 +286,20 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                            echo $row['Course_name'];
-                                            break;
-                                        }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Russian'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C2' AND Language='Russian'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid=$row["Course_Id"];
-                                        echo "<br> <b>Rs. ".$row['Price']."</b></br>"; ?>
-                                    </p>
+                                    It represents expertise of Russian language. After completion of this course, you will ideally hold excellent command over the language.
+                                        <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C2' AND Language='Russian'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -316,30 +309,30 @@ include("connection.php");
             </div>
         </div>
     </div>
-    <footer class="footer" style ="margin-top:50px">
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
-					<div class="d-flex align-items-center">
-						<h3 class="scribo-text"> SCRIBO </h3>
-						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
-					</div>
-					<div>
-						<div class="d-flex">
-							<a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
-							<a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
-							<a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <footer class="footer" style="margin-top:50px">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <h3 class="scribo-text"> SCRIBO </h3>
+                        <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+                    </div>
+                    <div>
+                        <div class="d-flex">
+                            <a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
+                            <a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
+                            <a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="vendors/base/vendor.bundle.base.js"></script>
-	<script src="vendors/owl.carousel/js/owl.carousel.js"></script>
-	<script src="vendors/aos/js/aos.js"></script>
-	<script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
-	<script src="js/template.js"></script>
+    <script src="vendors/owl.carousel/js/owl.carousel.js"></script>
+    <script src="vendors/aos/js/aos.js"></script>
+    <script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
+    <script src="js/template.js"></script>
     <script>
         <?php
 

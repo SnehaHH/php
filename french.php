@@ -102,7 +102,7 @@ include("connection.php");
                 </div>
                 <ul class="navbar-nav ml-auto align-items-center">
 					<li class="nav-item active">
-						<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="languages.php">Languages</a>
@@ -160,21 +160,13 @@ include("connection.php");
                     <div class="row mt-5">
 
                         <div class="col-sm-6">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima,
-                                nam! Neque, tenetur voluptates! Dicta cupiditate nobis sed est
-                                veritatis doloremque aspernatur sapiente, natus corporis enim
-                                suscipit labore, consequuntur adipisci ipsa?
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-                                voluptate hic deserunt facere ipsam accusantium debitis quo modi eum
-                                cumque recusandae perspiciatis quam eveniet voluptas quasi, natus
-                                aspernatur possimus soluta.
-                            </p>
+                            <p style="text-align:justify" ;>
+                            <b>French</b> is a Romance language of the Indo-European family. It descended from the Vulgar Latin of the Roman Empire, as did all Romance languages. French evolved from Gallo-Romance, the Latin spoken in Gaul, and more specifically in Northern Gaul. Its closest relatives are the other langues d'oïl—languages historically spoken in northern France and in southern Belgium, which French (Francien) largely supplanted. French was also influenced by native Celtic languages of Northern Roman Gaul like Gallia Belgica and by the (Germanic) Frankish language of the post-Roman Frankish invaders. Today, owing to France's past overseas expansion, there are numerous French-based creole languages, most notably Haitian Creole. A French-speaking person or nation may be referred to as Francophone in both English and French.
+                            French is an official language in 29 countries across multiple continents, most of which are members of the Organisation internationale de la Francophonie (OIF), the community of 84 countries which share the official use or teaching of French.<a href="https://en.wikipedia.org/wiki/French_language"> For more.</a>
+                        </p>
                         </div>
                         <div class="col-sm-6">
-                            <img src="images/german.jpg">
+                            <img src="images/french.jpg" width="400" height="330">
                         </div>
 
                     </div>
@@ -184,21 +176,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='French'";
-                                                            $result = mysqli_query($conn, $query);
-                                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                                echo $row['Course_name'];
-                                                                break;
-                                                            }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='French'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='French'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid = $row["Course_Id"];
-                                        echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
-                                    </p>
+                                    After finishing this beginner's level, you will be able to understand and use common phrases, exchange personal information, and converse about everyday topics such as shopping, bargaining, food, lodging, and money exchange, among others. Following the completion of this level, you will be well prepared to take the DELF A1 exam.
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='French'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -206,21 +198,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='French'";
-                                                            $result = mysqli_query($conn, $query);
-                                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                                echo $row['Course_name'];
-                                                                break;
-                                                            }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='French'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A2' AND Language='French'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid = $row["Course_Id"];
-                                        echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
-                                    </p>
+                                    It is at the lower-intermediate level that you will learn to converse confidently and clearly on familiar and routine topics. Following the completion of this level, you will be well prepared to take the DELF A2 exam. <br>
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A2' AND Language='French'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -228,21 +220,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='French'";
-                                                            $result = mysqli_query($conn, $query);
-                                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                                echo $row['Course_name'];
-                                                                break;
-                                                            }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='French'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B1' AND Language='French'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid = $row["Course_Id"];
-                                        echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
-                                    </p>
+                                    This is an intermediate level in which you will learn how to use French professionally, express yourself clearly, and discuss ideas. After completing this level, you will be well prepared to take the DELF B1 exam.<br>
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B1' AND Language='French'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -250,21 +242,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='French'";
-                                                            $result = mysqli_query($conn, $query);
-                                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                                echo $row['Course_name'];
-                                                                break;
-                                                            }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='French'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='French'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid = $row["Course_Id"];
-                                        echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
-                                    </p>
+                                    This is the upper-intermediate level of French, and it is one of the most important levels. You will be able to read and comprehend written materials such as manuals and instructions. Following the completion of this level, you will be well prepared to take the DELF B2 exam.<br>
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='French'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -272,21 +264,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='French'";
-                                                            $result = mysqli_query($conn, $query);
-                                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                                echo $row['Course_name'];
-                                                                break;
-                                                            }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='French'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='French'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid = $row["Course_Id"];
-                                        echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
-                                    </p>
+                                    This level marks your entry into the French language proficiency levels. You will be able to read and comprehend written materials on any subject completely. Following the completion of this level, you will be well prepared to take the DELF C1 exam<br>
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='French'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
@@ -294,21 +286,21 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='French'";
-                                                            $result = mysqli_query($conn, $query);
-                                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                                echo $row['Course_name'];
-                                                                break;
-                                                            }  ?> </h5>
+                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='French'";
+                                                                $result = mysqli_query($conn, $query);
+                                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                                    echo $row['Course_name'];
+                                                                    break;
+                                                                }  ?></b> </h5><br>
                                     <p class="card-text">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                        <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C2' AND Language='French'";
-                                        $result = mysqli_query($conn, $query);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $cid = $row["Course_Id"];
-                                        echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
-                                    </p>
+                                    This is also known as the near native level, and it is the highest level you will achieve in your journey of learning French. You are proficient enough to take the DALF- C2 exam. This is the highest French language qualification.<br>
+
+                                        <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C2' AND Language='French'";
+                                                $result = mysqli_query($conn, $query);
+                                                $row = mysqli_fetch_assoc($result);
+                                                $cid = $row["Course_Id"];
+                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                    </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
                             </div>
