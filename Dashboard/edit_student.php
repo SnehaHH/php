@@ -156,8 +156,11 @@ $result = mysqli_query($conn, $query);
                             }
                             ?>
                             <form method="post" action="edit_student.php">
-                                <input type="text" name="id" placeholder="Enter User ID" required />
-                                <button type="submit" name="submit">Check</button>
+                                <div class="form-group">
+                                <label for="id">User ID</label>
+                                <input class="form-control" type="text" name="id" placeholder="Enter User ID" required />
+                                </div>
+                                <button class="btn btn-primary" type="submit" name="submit">Check</button>
                             </form>
                             <?php
                             if (isset($_POST["submit"])) {
@@ -171,10 +174,13 @@ $result = mysqli_query($conn, $query);
                                         $email = $row["Email"];
                                         ?>
                                 <form method="post" action="edit_student.php">
-                                <label> User ID </label> <input type="text" name="ID" value="<?php echo $id; ?> "readonly /> <br>
-                                <label> Name </label> <input type="text" name="name" value="<?php echo $name; ?> " /> <br>
-                                <label> Email </label> <input type="email" name="email" value=" <?php echo $email; ?> "/> <br>
-                                <button type="submit" name="edit">Edit</button>
+                                    <div class="form-group">
+                                <label> User ID </label> <input class="form-control" type="text" name="ID" value="<?php echo $id; ?> " readonly /> </div>
+                                    <div class="form-group">
+                                <label> Name </label> <input class="form-control" type="text" name="name" value="<?php echo $name; ?> " /> </div>
+                                    <div class="form-group">
+                                <label> Email </label> <input class="form-control" type="email" name="email" value=" <?php echo $email; ?> "/> </div>
+                                <button class="btn btn-primary" type="submit" name="edit">Edit</button>
                             </form>
                                 <?php
                                     }

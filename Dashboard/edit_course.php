@@ -168,8 +168,9 @@ $result = mysqli_query($conn, $query);
                               }
                             ?>
                             <form method="post" action="edit_course.php" class="login-form" name="form_log">
-                                <input type="text" name="id" placeholder="Enter Course ID" required />
-                                <button type="submit" name="submit">Check</button>
+                                <div class="form-group"><label for="id">Course Id</label>
+                                <input class="form-control" type="text" name="id" placeholder="Enter Course ID" required /></div>
+                                <button class="btn btn-primary" type="submit" name="submit">Check</button>
                             </form>
                             <?php
                             if (isset($_POST["submit"])) {
@@ -186,13 +187,19 @@ $result = mysqli_query($conn, $query);
                                         $price = $row["Price"];
                                         ?>
                                 <form method="post" action="edit_course.php">
-                                <label> Course ID </label> <input type="text" name="ID" value="<?php echo $id; ?> " readonly/> <br>
-                                <label> Language </label> <input type="text" name="lang" value="<?php echo $lang; ?> " /> <br>
-                                <label> Course Name </label> <input type="text" name="course_name" value=" <?php echo $c_Name; ?> " /> <br>
-                                <label> Level </label> <input type="text" name="level" value=" <?php echo $level; ?> " /> <br>
-                                <label> Description </label> <input type="text" name="desc" value="<?php echo $desc; ?> " /><br>
-                                <label> Price </label><input type="text" name="price" value="<?php echo $price; ?> " /><br>
-                                <button type="submit" name="edit">Edit</button>
+                                    <div class="form-group">
+                                <label> Course ID </label> <input class="form-control" type="text" name="ID" value="<?php echo $id; ?> " readonly/> </div>
+                                    <div class="form-group">
+                                        <label> Language </label> <input class="form-control" type="text" name="lang" value="<?php echo $lang; ?> " /> </div>
+                                    <div class="form-group">
+                                        <label> Course Name </label> <input class="form-control" type="text" name="course_name" value=" <?php echo $c_Name; ?> " /> </div>
+                                    <div class="form-group">
+                                        <label> Level </label> <input class="form-control" type="text" name="level" value=" <?php echo $level; ?> " /> </div>
+                                    <div class="form-group">
+                                        <label> Description </label> <input class="form-control" type="text" name="desc" value="<?php echo $desc; ?> " /></div>
+                                    <div class="form-group">
+                                        <label> Price </label><input class="form-control" type="text" name="price" value="<?php echo $price; ?> " /></div>
+                                <button class="btn btn-primary" type="submit" name="edit">Edit</button>
                             </form>
                                 <?php
                                     }
