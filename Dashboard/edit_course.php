@@ -104,7 +104,7 @@ $result = mysqli_query($conn, $query);
 
                             <?php
                             if (mysqli_num_rows($result) > 0) {
-                                echo "<table border='1'>";
+                                echo "<table>";
 
                                 echo "<tr>";
                                 echo "<th>";
@@ -243,6 +243,14 @@ $result = mysqli_query($conn, $query);
                 sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
         }
     </script>
+
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+        </style>
 
 </body>
 

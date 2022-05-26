@@ -42,14 +42,14 @@ include("connection.php");
                 <li class="nav-item">
                     <a class="nav-link" href="languages.php">Languages</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link active" href="faq.php">FAQs</a>
+                <li class="nav-item">
+                    <a class="nav-link " href="faq.php">FAQs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects">Blogs</a>
+                    <a class="nav-link" href="blogs.php">Blogs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#testimonial">Testimonials</a>
+                    <a class="nav-link" href="testimonial.php">Testimonials</a>
                 </li>
 
                 <?php
