@@ -165,7 +165,7 @@ include("connection.php");
                                 <a href="https://en.wikipedia.org/wiki/German_language"> For more</a>
                             </p>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 d-flex justify-content-center">
                             <img src="images/Deutsch_Doodles__Photo.jpg" width="320" height="250">
                         </div>
 

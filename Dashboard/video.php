@@ -17,6 +17,8 @@ $row=mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo ($_SESSION["name"] . "'s"); ?> Dashboard</title>
 </head>
@@ -76,8 +78,8 @@ $row=mysqli_fetch_assoc($result);
         </nav>
         <div class="home-content">
             <div class="sales-boxes">
-                <div class="recent-sales box">
-                    <div class="sales-details">
+                <div class="recent-sales box w-100">
+                    <div class="sales-details w-100">
                         <ul class="details">
                           
                             <video width="640" height="480" controls autoplay>

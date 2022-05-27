@@ -166,7 +166,7 @@ include("connection.php");
                                 <a href="https://en.wikipedia.org/wiki/Spanish_language"> For more.</a>
                             </p>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 d-flex justify-content-center">
                             <img src="images/Spanishlang.jpg" height="350" width="500">
                         </div>
 

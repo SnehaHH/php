@@ -166,7 +166,7 @@ include("connection.php");
                                 <a href="https://en.wikipedia.org/wiki/English_language"> For more.</a>
                             </p>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 d-flex justify-content-center">
                             <img src="images/Eng.png" height="330" width="390">
                         </div>
 

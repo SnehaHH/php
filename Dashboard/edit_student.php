@@ -103,27 +103,29 @@ $result = mysqli_query($conn, $query);
 
                             <?php
                             if (mysqli_num_rows($result) > 0) {
-                                echo "<table border='1'>";
+                                echo "<table class='table table-hover'>";
+                                echo "<thead scope='col' class='thead-light'>";
                                 echo "<tr>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "User Id";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Name";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Email";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Admin";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Created";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Updated";
-                                echo "</th>";
+                                echo "</th >";
                                 echo "</tr>";
+                                echo "</thead>";
 
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $admin="No";

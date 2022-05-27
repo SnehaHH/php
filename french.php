@@ -165,7 +165,7 @@ include("connection.php");
                             French is an official language in 29 countries across multiple continents, most of which are members of the Organisation internationale de la Francophonie (OIF), the community of 84 countries which share the official use or teaching of French.<a href="https://en.wikipedia.org/wiki/French_language"> For more.</a>
                         </p>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 d-flex justify-content-center">
                             <img src="images/french.jpg" width="400" height="330">
                         </div>
 

@@ -165,7 +165,7 @@ include("connection.php");
                                 <a href="https://en.wikipedia.org/wiki/Greek_language"> For more.</a>
                             </p>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-6 d-flex justify-content-center">
                         <img src="images/Greece.png" height="320" width="500">
                         </div>
 

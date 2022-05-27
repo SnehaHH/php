@@ -104,34 +104,35 @@ $result = mysqli_query($conn, $query);
 
                             <?php
                             if (mysqli_num_rows($result) > 0) {
-                                echo "<table>";
-
+                                echo "<table class='table table-hover'>";
+                                echo "<thead scope='col' class='thead-light'>";
                                 echo "<tr>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Course_Id";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Language";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Level";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Course_name";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Description";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Price";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Created";
                                 echo "</th>";
-                                echo "<th>";
+                                echo "<th scope='col'>";
                                 echo "Updated";
-                                echo "</th>";
+                                echo "</th scope='col'>";
                                 echo "</tr>";
+                                echo "</thead>";
 
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     echo "<tr>";
