@@ -11,14 +11,25 @@ WHERE Course_Id = '$cid' ";
 $result = mysqli_query($conn, $query);
 $row=mysqli_fetch_assoc($result);
 ?>
+<?php
+$a = $_SESSION["userid"];
+$query1 = "SELECT Profile_pic from user where User_Id='$a'";
+$result1 = mysqli_query($conn, $query1);
+$ppic = true;
+$row=mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"]!=null) {
+    $ppic = true;
+} else
+    $ppic = false;
+?>
 
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo ($_SESSION["name"] . "'s"); ?> Dashboard</title>
 </head>
@@ -32,26 +43,26 @@ $row=mysqli_fetch_assoc($result);
         <ul class="nav-links">
             <li>
                 <a href="course_list_stu.php">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class="bi-list-stars"></i>
                     <span class="links_name">List of Courses</span>
                 </a>
             </li>
             <li>
                 <a href="keyboard.php">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class="bi-keyboard"></i>
                     <span class="links_name">Keyboards</span>
                 </a>
-
             </li>
+
             <li>
                 <a href="help.php">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class="bi-info-lg"></i>
                     <span class="links_name">Help</span>
                 </a>
             </li>
             <li>
                 <a href="edit_profile.php">
-                    <i class='bx bx-grid-alt'></i>
+                    <i class='bx bx-user'></i>
                     <span class="links_name">Edit Profile</span>
                 </a>
             </li>
@@ -68,12 +79,20 @@ $row=mysqli_fetch_assoc($result);
         <nav>
             <div class="sidebar-button">
                 <i class='bx bx-menu sidebarBtn'></i>
-                <span class="logo_name">SCRIBO</span>
+                <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
             </div>
 
             <div class="profile-details">
-                <img src="../images/German.png" alt="">
-                <span class="admin_name"><?php echo ($_SESSION["name"]); ?> </span>
+                <?php
+                if ($ppic == true) {
+
+                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                } else
+                    echo ('<img src="../images/ram.png"');
+
+                ?>
+                <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
+
             </div>
         </nav>
         <div class="home-content">
@@ -82,7 +101,7 @@ $row=mysqli_fetch_assoc($result);
                     <div class="sales-details w-100">
                         <ul class="details">
                           
-                            <video width="640" height="480" controls autoplay>
+                            <video height="500" controls autoplay >
                                 
                                 <source src="<?php  echo $row["Course_link"]; ?>" type="video/mp4">
 

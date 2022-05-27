@@ -6,6 +6,13 @@ include("../connection.php");
 $a = $_SESSION["userid"];
 $query1 = "SELECT Profile_pic from user where User_Id='$a'";
 $result1 = mysqli_query($conn, $query1);
+$ppic = true;
+$row=mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"]!=null) {
+    $ppic = true;
+} else
+    $ppic = false;
+
 ?>
 <?php
 
@@ -24,8 +31,16 @@ $result = mysqli_query($conn, $query);
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Admin Dashboard</title>
+  <style>
+        .inc_size
+        {
+            width: 80%;
+        }
+
+        </style>
 </head>
 
 <body>
@@ -86,19 +101,23 @@ $result = mysqli_query($conn, $query);
         <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
       </div>
 
-            <div class="profile-details">
-                <img src="data:image/jpg;base64,<?php
-                                                $row = mysqli_fetch_assoc($result1);
-                                                echo  base64_encode($row["Profile_pic"]);
-                                                ?>" alt="">
+      <div class="profile-details">
+                <?php
+                if ($ppic == true) {
+                    
+                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                } else
+                    echo ('<img src="../images/ram.png"');
+
+                ?>
                 <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
-               
+
             </div>
         </nav>
         <div class="home-content">
 
             <div class="sales-boxes">
-                <div class="recent-sales box">
+                <div class="recent-sales box w-100">
                     <div class="sales-details">
                         <ul class="details">
 
@@ -245,13 +264,7 @@ $result = mysqli_query($conn, $query);
         }
     </script>
 
-    <style>
-        table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
 
-        </style>
 
 </body>
 

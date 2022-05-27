@@ -4,8 +4,14 @@
 session_start();
 include("../connection.php");
 $a=$_SESSION["userid"];
-$query="SELECT Profile_pic from user where User_Id='$a'";
-$result=mysqli_query($conn,$query);
+$query1 = "SELECT Profile_pic from user where User_Id='$a'";
+$result1 = mysqli_query($conn, $query1);
+$ppic = true;
+$row=mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"]!=null) {
+    $ppic = true;
+} else
+    $ppic = false;
 ?>
 
 
@@ -15,7 +21,7 @@ $result=mysqli_query($conn,$query);
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> <?php echo($_SESSION["name"]."'s"); ?> Dashboard</title>
+  <title> <?php echo($_SESSION["name"]."'s");?> Dashboard</title>
 </head>
 
 <body>
@@ -28,7 +34,7 @@ $result=mysqli_query($conn,$query);
       <li>
         <a href="course_list_stu.php">
         <i class="bi-list-stars"></i>
-          <span class="links_name">List of Courses</span>
+          <span class="links_name">List of Courses </span>
         </a>
       </li>
       <li>
@@ -67,12 +73,17 @@ $result=mysqli_query($conn,$query);
       </div>
      
       <div class="profile-details">
-        <img src="data:image/jpg;base64,<?php
-        $row=mysqli_fetch_assoc($result);
-        echo  base64_encode($row["Profile_pic"]); 
-        ?>" alt="">
-        <span class="admin_name"><?php echo($_SESSION["name"]);?></span>
-      </div>
+                <?php
+                if ($ppic == true) {
+                    
+                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                } else
+                    echo ('<img src="../images/ram.png"');
+
+                ?>
+                <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
+
+            </div>
     </nav>
     <div class="sales-boxes">
             <div class="recent-sales box">

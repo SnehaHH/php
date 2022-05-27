@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $query);
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Check out</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link rel="stylesheet" href="css/style.css">
@@ -102,7 +102,7 @@ $result = mysqli_query($conn, $query);
                         <div class="main-banner">
                             <div class="d-sm-flex justify-content-between">
                                 <div>
-                                    <h1 style="color:white;">CHECKOUT</h1>
+                                    <h1 style="color:white;"><b>CHECKOUT</b></h1>
                                 </div>
                             </div>
 
@@ -201,31 +201,25 @@ $result = mysqli_query($conn, $query);
 
 
                     </div>
-
                 </div>
             </div>
     </div>
     </section>
     </div>
-    <footer class="footer" style="margin-top:50px">
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-flex align-items-center">
-                        <h3 class="scribo-text"> SCRIBO </h3>
-                        <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
-                    </div>
-                    <div>
-                        <div class="d-flex">
-                            <a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
-                            <a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
-                            <a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer mt-5">
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="d-flex align-items-center">
+						<h3 class="scribo-text"> SCRIBO </h3>
+						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+					</div>
+					<div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
     <style>
         .tomove {
             width: 90%;

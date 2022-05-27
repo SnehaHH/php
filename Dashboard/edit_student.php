@@ -6,12 +6,19 @@ include("../connection.php");
 $a = $_SESSION["userid"];
 $query1 = "SELECT Profile_pic from user where User_Id='$a'";
 $result1 = mysqli_query($conn, $query1);
+$ppic = true;
+$row = mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"] != null) {
+    $ppic = true;
+} else
+    $ppic = false;
 ?>
 <?php
 
 include("../connection.php");
 $query = "SELECT * FROM user";
 $result = mysqli_query($conn, $query);
+
 
 ?>
 
@@ -25,6 +32,7 @@ $result = mysqli_query($conn, $query);
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="dashboard.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title> Admin Dashboard</title>
 </head>
 <body>
@@ -84,14 +92,17 @@ $result = mysqli_query($conn, $query);
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
       </div>
+      <div class="profile-details">
+                <?php
+                if ($ppic == true) {
 
-            <div class="profile-details">
-                <img src="data:image/jpg;base64,<?php
-                                                $row = mysqli_fetch_assoc($result1);
-                                                echo  base64_encode($row["Profile_pic"]);
-                                                ?>" alt="">
+                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                } else
+                    echo ('<img src="../images/ram.png"');
+
+                ?>
                 <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
-               
+
             </div>
         </nav>
         <div class="home-content">
@@ -152,7 +163,7 @@ $result = mysqli_query($conn, $query);
                                     echo "</td>";
                                     echo "</tr>";
                                 }
-                                echo "</table>";
+                                echo "</table> <br>";
                             } else {
                                 echo ("No users added yet!");
                             }
@@ -160,8 +171,9 @@ $result = mysqli_query($conn, $query);
                             <form method="post" action="edit_student.php">
                                 <div class="form-group">
                                 <label for="id">User ID</label>
-                                <input class="form-control" type="text" name="id" placeholder="Enter User ID" required />
+                                &nbsp;<input class="form-control" type="text" name="id" placeholder="Enter User ID" required />
                                 </div>
+                                <br>
                                 <button class="btn btn-primary" type="submit" name="submit">Check</button>
                             </form>
                             <?php

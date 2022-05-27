@@ -23,6 +23,13 @@ $result1 = mysqli_query($conn, $query1);
 
 $query2 = "SELECT * from user where User_Id='$a'";
 $result2 = mysqli_query($conn, $query2);
+
+$ppic = true;
+$row=mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"]!=null) {
+    $ppic = true;
+} else
+    $ppic = false;
 ?>
 
 
@@ -84,12 +91,17 @@ $result2 = mysqli_query($conn, $query2);
         </div>
 
         <div class="profile-details">
-            <img src="data:image/jpg;base64,<?php
-            $row = mysqli_fetch_assoc($result1);
-            echo base64_encode($row["Profile_pic"]);
-            ?>" alt="">
-            <span class="admin_name"><?php echo($_SESSION["name"]); ?></span>
-        </div>
+                <?php
+                if ($ppic == true) {
+
+                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                } else
+                    echo ('<img src="../images/ram.png"');
+
+                ?>
+                <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
+
+            </div>
     </nav>
     <div class="home-content">
         <div class="sales-boxes">

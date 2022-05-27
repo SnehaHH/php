@@ -202,24 +202,19 @@ include("connection.php");
     </section>
     </div>
     <footer class="footer">
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-flex align-items-center">
-                        <h3 class="scribo-text"> SCRIBO </h3>
-                        <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
-                    </div>
-                    <div>
-                        <div class="d-flex">
-                            <a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
-                            <a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
-                            <a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="d-flex align-items-center">
+						<h3 class="scribo-text"> SCRIBO </h3>
+						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+					</div>
+					<div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
     <script src="vendors/base/vendor.bundle.base.js"></script>
     <script src="vendors/owl.carousel/js/owl.carousel.js"></script>
     <script src="vendors/aos/js/aos.js"></script>

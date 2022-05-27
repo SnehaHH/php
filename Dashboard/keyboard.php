@@ -11,7 +11,8 @@ courses.Description,
 courses.Course_link,
 subscriptions.User_Id,
 subscriptions.Course_Id,
-user.User_Id
+user.User_Id,
+user.Profile_pic
 FROM subscriptions 
 INNER JOIN user on user.User_Id = subscriptions.User_Id
 INNER JOIN courses ON courses.Course_Id = subscriptions.Course_Id
@@ -20,11 +21,17 @@ $result = mysqli_query($conn, $query);
 $a=$_SESSION["userid"];
 $query1="SELECT Profile_pic from user where User_Id='$a'";
 $result1=mysqli_query($conn,$query1);
+$ppic = true;
+$row = mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"] != null) {
+    $ppic = true;
+} else
+    $ppic = false;
 ?>
 
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -40,38 +47,38 @@ $result1=mysqli_query($conn,$query1);
             <span class="logo_name">Dashboard</span>
         </div>
         <ul class="nav-links">
-        <li>
-        <a href="course_list_stu.php">
-        <i class="bi-list-stars"></i>
-          <span class="links_name">List of Courses</span>
-        </a>
-      </li>
-      <li>
-        <a href="keyboard.php">
-        <i class="bi-keyboard"></i>
-          <span class="links_name">Keyboards</span>
-        </a>
-      </li>
+            <li>
+                <a href="course_list_stu.php">
+                    <i class="bi-list-stars"></i>
+                    <span class="links_name">List of Courses</span>
+                </a>
+            </li>
+            <li>
+                <a href="keyboard.php">
+                    <i class="bi-keyboard"></i>
+                    <span class="links_name">Keyboards</span>
+                </a>
+            </li>
 
-      <li>
-        <a href="help.php">
-        <i class="bi-info-lg"></i>
-          <span class="links_name">Help</span>
-        </a>
-      </li>
-      <li>
-        <a href="edit_profile.php">
-        <i class='bx bx-user'></i>
-          <span class="links_name">Edit Profile</span>
-        </a>
-      </li>
-      
-      <li class="log_out">
-        <a href="../Logout.php">
-          <i class='bx bx-log-out'></i>
-          <span class="links_name">Log out</span>
-        </a>
-      </li>
+            <li>
+                <a href="help.php">
+                    <i class="bi-info-lg"></i>
+                    <span class="links_name">Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="edit_profile.php">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Edit Profile</span>
+                </a>
+            </li>
+
+            <li class="log_out">
+                <a href="../Logout.php">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
         </ul>
     </div>
     <section class="home-section">
@@ -82,11 +89,16 @@ $result1=mysqli_query($conn,$query1);
             </div>
 
             <div class="profile-details">
-            <img src="data:image/jpg;base64,<?php
-                                                $row = mysqli_fetch_assoc($result1);
-                                                echo  base64_encode($row["Profile_pic"]);
-                                                ?>" alt="">
+                <?php
+                if ($ppic == true) {
+                    
+                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                } else
+                    echo ('<img src="../images/ram.png"');
+
+                ?>
                 <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
+
             </div>
         </nav>
         <div class="home-content">
@@ -104,15 +116,15 @@ $result1=mysqli_query($conn,$query1);
                                 if(!isset($languages[$row["Language"]]))
                                 echo '<a href=keys.php?courseid='.$row["Course_Id"].'>
                                 <div class="col-sm-3 mx-3">
-                                    <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="../images/' . $row["Language"] . '.jpg" height="150" width="200" alt="Card image cap">
+                                    <div class="card" style="width:100%;">
+                                    
                                     <div class="card-body">
-                                    <p class="card-text"> ' . $row["Description"] . '
+                                    <p class="card-text"> ' . $row["Course_name"] . '</a>
                                     </p> 
                                     </div>
                                     </div> 
                                     </div>
-                                    </a>';
+                                   ';
                                 $languages[$row["Language"]] = true;
                             }
                         } else {

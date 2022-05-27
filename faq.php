@@ -162,26 +162,20 @@ include("connection.php");
             <div style="height: 150px">
 
             </div>
-            <footer class="footer mt-5">
-                <div class="footer-bottom">
-                    <div class="container">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <h3 class="scribo-text"> SCRIBO </h3>
-                                <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span>
-                                </p>
-                            </div>
-                            <div>
-                                <div class="d-flex">
-                                    <a href="#" class="text-small text-white mx-2 footer-link">Careers </a>
-                                    <a href="#" class="text-small text-white mx-2 footer-link">Terms and Conditions </a>
-                                    <a href="#" class="text-small text-white mx-2 footer-link">Privacy Policy </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <footer class="footer">
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="d-flex align-items-center">
+						<h3 class="scribo-text"> SCRIBO </h3>
+						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+					</div>
+					<div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
             <script src="vendors/base/vendor.bundle.base.js"></script>
 
