@@ -32,7 +32,7 @@ include("connection.php");
                     <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
                 </div>
                 <ul class="navbar-nav ml-auto align-items-center">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -66,7 +66,7 @@ include("connection.php");
                         echo ('</li>
 						<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> LOGOUT</a>
+								<a class="nav-link" href="Logout.php"> Logout</a>
 								
 							</li>
 							');
@@ -110,48 +110,48 @@ include("connection.php");
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    2.	Does the course fee include the language certifications (DELE/ DELF/ Goethe, etc) for that level? 
+                                        2. Does the course fee include the language certifications (DELE/ DELF/ Goethe, etc) for that level?
                                     </button>
                                 </h2>
                                 <div id="basicAccordionCollapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-mdb-parent="#basicAccordion" style="">
                                     <div class="accordion-body">
-                                    No, registration for the language certification courses is not included in the course structure and price. 
+                                        No, registration for the language certification courses is not included in the course structure and price.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    3.	What is your refund policy?
+                                        3. What is your refund policy?
                                     </button>
                                 </h2>
                                 <div id="basicAccordionCollapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-mdb-parent="#basicAccordion" style="">
                                     <div class="accordion-body">
-                                    We refund 90% of the course fee (excluding taxes) if you cancel the course within 5 days of the purchase. If you cancel the course after 5 days and within one month if purchasing the course, you will receive a 50% refund (excluding taxes). No refunds will be given for cancellation of courses after one month of purchasing the course. For any such changes, please get in touch with the course instructor directly. 
+                                        We refund 90% of the course fee (excluding taxes) if you cancel the course within 5 days of the purchase. If you cancel the course after 5 days and within one month if purchasing the course, you will receive a 50% refund (excluding taxes). No refunds will be given for cancellation of courses after one month of purchasing the course. For any such changes, please get in touch with the course instructor directly.
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
                                     <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    4.	Will you be adding more language courses?
+                                        4. Will you be adding more language courses?
                                     </button>
                                 </h2>
                                 <div id="basicAccordionCollapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-mdb-parent="#basicAccordion" style="">
                                     <div class="accordion-body">
-                                    Yes, we will! The Scribo academic team is constantly working towards updating our courses. We will be rolling out multiple updates throughout the year and adding more languages soon!
+                                        Yes, we will! The Scribo academic team is constantly working towards updating our courses. We will be rolling out multiple updates throughout the year and adding more languages soon!
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFive">
                                     <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#basicAccordionCollapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    5.	Have any additional queries?
+                                        5. Have any additional queries?
                                     </button>
                                 </h2>
                                 <div id="basicAccordionCollapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-mdb-parent="#basicAccordion" style="">
                                     <div class="accordion-body">
-                                    Get in touch with us through your course instructor if you are currently a learner at Scribo, or reach us through the form on the homepage. 
+                                        Get in touch with us through your course instructor if you are currently a learner at Scribo, or reach us through the form on the homepage.
                                     </div>
                                 </div>
                             </div>
@@ -163,19 +163,19 @@ include("connection.php");
 
             </div>
             <footer class="footer">
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
-					<div class="d-flex align-items-center">
-						<h3 class="scribo-text"> SCRIBO </h3>
-						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
-					</div>
-					<div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <h3 class="scribo-text"> SCRIBO </h3>
+                                <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
             <script src="vendors/base/vendor.bundle.base.js"></script>
 

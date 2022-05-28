@@ -35,34 +35,34 @@ $result = mysqli_query($conn, $query);
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div id="mobile-menu-overlay"></div>
     <nav class="navbar navbar-expand-lg fixed-top">
-		<div class="container">
-			<h2 class="scribo-text"> SCRIBO </h2>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-				<h2><b> SCRIBO </b></h2>
-					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
-				</div>
-				<ul class="navbar-nav ml-auto align-items-center">
-					<li class="nav-item active">
-						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="languages.php">Languages</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="faq.php">FAQs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="blogs.php">Blogs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="testimonial.php">Testimonials</a>
-					</li>
+        <div class="container">
+            <h2 class="scribo-text"> SCRIBO </h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+                    <h2><b> SCRIBO </b></h2>
+                    <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
+                </div>
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="languages.php">Languages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.php">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.php">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonial.php">Testimonials</a>
+                    </li>
 
-					<?php
+                    <?php
                     if (isset($_SESSION["name"])) {
                         echo ('<li class="nav-item">
 							
@@ -90,10 +90,10 @@ $result = mysqli_query($conn, $query);
 							</li>');
                     }
                     ?>
-				</ul>
-			</div>
-		</div>
-	</nav>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="page-body-wrapper">
         <section id="home" class="home" style="background-position: 0-280px">
             <div class="container">
@@ -134,7 +134,7 @@ $result = mysqli_query($conn, $query);
 
                                 echo "<tr>";
                                 echo "<td>";
-                                echo "<i class='bi-dash-circle' id='". $row['course_id']."'></i>";
+                                echo "<i class='bi-dash-circle' id='" . $row['course_id'] . "'></i>";
                                 echo "</td>";
                                 echo "<td>";
                                 echo $row["course_id"];
@@ -184,7 +184,7 @@ $result = mysqli_query($conn, $query);
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <b> Confirm payment of Rs. ' . $t .'</b>
+                                    <b> Confirm payment of Rs. ' . $t . '</b>
                                     
                                 </div>
                                 <div class="modal-footer">
@@ -195,7 +195,7 @@ $result = mysqli_query($conn, $query);
                         </div>
                     </div>';
                         } else {
-                            echo (" <h2 class='mt-5'><b> Cart is empty. </h2></b>");
+                            echo (" <h2 style='margin-top:200px'><b> Cart is empty. </h2></b>");
                         }
                         ?>
 
@@ -206,20 +206,20 @@ $result = mysqli_query($conn, $query);
     </div>
     </section>
     </div>
-    <footer class="footer mt-5">
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
-					<div class="d-flex align-items-center">
-						<h3 class="scribo-text"> SCRIBO </h3>
-						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
-					</div>
-					<div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+    <footer class="footer" style="margin-top:200px">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <h3 class="scribo-text"> SCRIBO </h3>
+                        <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <style>
         .tomove {
             width: 90%;
@@ -236,14 +236,13 @@ $result = mysqli_query($conn, $query);
 
 
     <script>
-
-        function delete_course(e)
-        {
-            var cid=e.target.id;
-            fetch("deletecartitem.php?cid="+cid).then(()=>{
-                location.reload();   
+        function delete_course(e) {
+            var cid = e.target.id;
+            fetch("deletecartitem.php?cid=" + cid).then(() => {
+                location.reload();
             })
         }
+
         function finalpay(e) {
             window.location.replace("payments.php");
         }

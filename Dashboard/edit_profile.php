@@ -25,8 +25,8 @@ $query2 = "SELECT * from user where User_Id='$a'";
 $result2 = mysqli_query($conn, $query2);
 
 $ppic = true;
-$row=mysqli_fetch_assoc($result1);
-if ($row["Profile_pic"]!=null) {
+$row = mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"] != null) {
     $ppic = true;
 } else
     $ppic = false;
@@ -36,61 +36,61 @@ if ($row["Profile_pic"]!=null) {
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?php echo($_SESSION["name"] . "'s"); ?> Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title> <?php echo ($_SESSION["name"] . "'s"); ?> Dashboard</title>
 </head>
 
 <body>
-<div class="sidebar">
-    <div class="logo-details">
-        <i class='bx bxl'></i>
-        <span class="logo_name"><b>Dashboard</b></span>
-    </div>
-    <ul class="nav-links">
-        <li>
-            <a href="course_list_stu.php">
-                <i class='bx bx-grid-alt'></i>
-                <span class="links_name">List of Courses</span>
-            </a>
-        </li>
-        <li>
-            <a href="keyboard.php">
-                <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Keyboards</span>
-            </a>
-        </li>
-        <li>
-            <a href="help.php">
-                <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Help</span>
-            </a>
-        </li>
-        <li>
-            <a href="edit_profile.php">
-                <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Edit Profile</span>
-            </a>
-        </li>
-
-        <li class="log_out">
-            <a href="../Logout.php">
-                <i class='bx bx-log-out'></i>
-                <span class="links_name">Log out</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<section class="home-section">
-    <nav>
-        <div class="sidebar-button">
-            <i class='bx bx-menu sidebarBtn'></i>
-            <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl'></i>
+            <span class="logo_name"><b>Dashboard</b></span>
         </div>
+        <ul class="nav-links">
+            <li>
+                <a href="course_list_stu.php">
+                    <i class="bi-list-stars"></i>
+                    <span class="links_name">List of Courses</span>
+                </a>
+            </li>
+            <li>
+                <a href="keyboard.php">
+                    <i class="bi-keyboard"></i>
+                    <span class="links_name">Keyboards</span>
+                </a>
+            </li>
 
-        <div class="profile-details">
+            <li>
+                <a href="help.php">
+                    <i class="bi-info-lg"></i>
+                    <span class="links_name">Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="edit_profile.php">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Edit Profile</span>
+                </a>
+            </li>
+
+            <li class="log_out">
+                <a href="../Logout.php">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
+            </div>
+
+            <div class="profile-details">
                 <?php
                 if ($ppic == true) {
 
@@ -102,101 +102,98 @@ if ($row["Profile_pic"]!=null) {
                 <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
 
             </div>
-    </nav>
-    <div class="home-content">
-        <div class="sales-boxes">
-            <div class="container">
-                <div class="row">
+        </nav>
+        <div class="home-content">
+            <div class="sales-boxes">
+                <div class="container">
+                    <div class="row">
 
-                    <form method="post" action="edit_profile.php" name="form_log" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="name"></label>
-                            <input class="form-control" type="text" name="name"
-                                   value="<?php echo($_SESSION["name"]); ?>"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="email"></label>
-                            <input class="form-control" type="email" name="email"
-                                   value="<?php echo($_SESSION["email"]); ?>" disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label for="curr_Pass"></label>
-                            <input class="form-control" type="password" name="curr_Pass" placeholder="Old Password"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="new_Pass"></label>
-                            <input class="form-control" type="password" name="new_Pass" placeholder="New Password"/>
+                        <form method="post" action="edit_profile.php" name="form_log" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label for="con_Pass"></label>
-                                <input class="form-control" type="password" name="con_Pass"
-                                       placeholder="Retype New Password"/>
+                                <label for="name"></label>
+                                <input class="form-control" type="text" name="name" value="<?php echo ($_SESSION["name"]); ?>" />
                             </div>
-                            <button class="btn btn-primary" type="submit" name="confirm">Confirm</button>
-                    </form>
+                            <div class="form-group">
+                                <label for="email"></label>
+                                <input class="form-control" type="email" name="email" value="<?php echo ($_SESSION["email"]); ?>" disabled />
+                            </div>
+                            <div class="form-group">
+                                <label for="curr_Pass"></label>
+                                <input class="form-control" type="password" name="curr_Pass" placeholder="Old Password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="new_Pass"></label>
+                                <input class="form-control" type="password" name="new_Pass" placeholder="New Password" />
+                                <div class="form-group">
+                                    <label for="con_Pass"></label>
+                                    <input class="form-control" type="password" name="con_Pass" placeholder="Retype New Password" />
+                                </div>
+                                <button class="btn btn-primary" type="submit" name="confirm">Confirm</button>
+                        </form>
 
-                    <?php
-                    $name = $currpass = $newpass = $conpass = $ppic = "";
-                    $row = mysqli_fetch_assoc($result2);
-                    if (isset($_POST["confirm"])) {
-                        if ($_POST["name"])
-                            $name = $_POST["name"];
+                        <?php
+                        $name = $currpass = $newpass = $conpass = $ppic = "";
+                        $row = mysqli_fetch_assoc($result2);
+                        if (isset($_POST["confirm"])) {
+                            if ($_POST["name"])
+                                $name = $_POST["name"];
 
-                        if ($_POST["curr_Pass"])
-                            $currpass = $_POST["curr_Pass"];
+                            if ($_POST["curr_Pass"])
+                                $currpass = $_POST["curr_Pass"];
 
-                        else
-                            $currpass = $row["Password"];
+                            else
+                                $currpass = $row["Password"];
 
-                        if ($_POST["new_Pass"])
-                            $newpass = $_POST["new_Pass"];
+                            if ($_POST["new_Pass"])
+                                $newpass = $_POST["new_Pass"];
 
-                        else
-                            $newpass = null;
+                            else
+                                $newpass = null;
 
-                        if ($_POST["con_Pass"])
-                            $conpass = $_POST["con_Pass"];
+                            if ($_POST["con_Pass"])
+                                $conpass = $_POST["con_Pass"];
 
-                        else
-                            $conpass = null;
+                            else
+                                $conpass = null;
 
 
-                        if ($name && $currpass && $newpass && $newpass && $conpass) {
-                            if ($currpass === $row["Password"] && $conpass === $newpass) {
-                                $query1 = "UPDATE user SET Name='$name',Password='$newpass', Updated_at=CURRENT_TIMESTAMP 
+                            if ($name && $currpass && $newpass && $newpass && $conpass) {
+                                if ($currpass === $row["Password"] && $conpass === $newpass) {
+                                    $query1 = "UPDATE user SET Name='$name',Password='$newpass', Updated_at=CURRENT_TIMESTAMP 
         WHERE User_Id ='$a' ";
-                            }
+                                }
 
-                            if (mysqli_query($conn, $query1)) {
-                                echo '<script>
+                                if (mysqli_query($conn, $query1)) {
+                                    echo '<script>
             alert("Edited successfully");
         </script>';
-                                $name = $currpass = $newpass = $conpass = $ppic = "";
-                            } else {
-                                echo '<script>
+                                    $name = $currpass = $newpass = $conpass = $ppic = "";
+                                } else {
+                                    echo '<script>
             alert("Edited Unsuccessfully");
         </script>';
+                                }
                             }
                         }
-                    }
-                    ?>
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
-<script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function () {
-        sidebar.classList.toggle("active");
-        if (sidebar.classList.contains("active")) {
-            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else
-            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-</script>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
 
 </body>
 
@@ -299,7 +296,7 @@ if ($row["Profile_pic"]!=null) {
         transition: all 0.5s ease;
     }
 
-    .sidebar.active ~ .home-section {
+    .sidebar.active~.home-section {
         width: calc(100% - 60px);
         left: 60px;
     }
@@ -320,7 +317,7 @@ if ($row["Profile_pic"]!=null) {
         transition: all 0.5s ease;
     }
 
-    .sidebar.active ~ .home-section nav {
+    .sidebar.active~.home-section nav {
         left: 60px;
         width: calc(100% - 60px);
     }
@@ -618,7 +615,7 @@ if ($row["Profile_pic"]!=null) {
             left: 60px;
         }
 
-        .sidebar.active ~ .home-section {
+        .sidebar.active~.home-section {
             /* width: calc(100% - 220px); */
             overflow: hidden;
             left: 220px;
@@ -629,7 +626,7 @@ if ($row["Profile_pic"]!=null) {
             left: 60px;
         }
 
-        .sidebar.active ~ .home-section nav {
+        .sidebar.active~.home-section nav {
             width: calc(100% - 220px);
             left: 220px;
         }
@@ -682,7 +679,7 @@ if ($row["Profile_pic"]!=null) {
             margin-bottom: 15px;
         }
 
-        .sidebar.active ~ .home-section nav .profile-details {
+        .sidebar.active~.home-section nav .profile-details {
             display: none;
         }
     }
@@ -701,7 +698,7 @@ if ($row["Profile_pic"]!=null) {
             left: 0;
         }
 
-        .sidebar.active ~ .home-section {
+        .sidebar.active~.home-section {
             left: 60px;
             width: calc(100% - 60px);
         }
@@ -711,7 +708,7 @@ if ($row["Profile_pic"]!=null) {
             left: 0;
         }
 
-        .sidebar.active ~ .home-section nav {
+        .sidebar.active~.home-section nav {
             left: 60px;
             width: calc(100% - 60px);
         }

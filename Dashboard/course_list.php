@@ -3,15 +3,15 @@
 <?php
 session_start();
 include("../connection.php");
-$a=$_SESSION["userid"];
-$query1="SELECT Profile_pic from user where User_Id='$a'";
-$result1=mysqli_query($conn,$query1);
+$a = $_SESSION["userid"];
+$query1 = "SELECT Profile_pic from user where User_Id='$a'";
+$result1 = mysqli_query($conn, $query1);
 $ppic = true;
-$row=mysqli_fetch_assoc($result1);
-if ($row["Profile_pic"]!=null) {
-    $ppic = true;
+$row = mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"] != null) {
+  $ppic = true;
 } else
-    $ppic = false;
+  $ppic = false;
 ?>
 <?php
 
@@ -43,69 +43,69 @@ $result = mysqli_query($conn, $query);
       <span class="logo_name">Admin Dashboard</span>
     </div>
     <ul class="nav-links">
-            <li>
-                <a href="course_list.php">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">List of Courses</span>
-                </a>
-            </li>
-            <li>
-                <a href="edit_course.php">
-                <i class="bi-pencil-square"></i>
-                    <span class="links_name">Edit Course</span>
-                </a>
-            </li>
-            <li>
-                <a href="student_list.php">
-                <i class="bi-file-earmark-person"></i>
-                    <span class="links_name">List of Students</span>
-                </a>
-            </li>
-            <li>
-                <a href="add_student.php">
-                <i class="bi-person-plus"></i>
-                    <span class="links_name">Add Student</span>
-                </a>
-            </li>
-            <li>
-                <a href="edit_student.php">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">Edit Student</span>
-                </a>
-            </li>
-            <li>
-                <a href="delete_student.php">
-                <i class="bi-x-lg"></i>
-                    <span class="links_name">Delete Student</span>
-                </a>
-            </li>
-            <li class="log_out">
-                <a href="../Logout.php">
-                    <i class='bx bx-log-out'></i>
-                    <span class="links_name">Log out</span>
-                </a>
-            </li>
-        </ul>
+      <li>
+        <a href="course_list.php">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">List of Courses</span>
+        </a>
+      </li>
+      <li>
+        <a href="edit_course.php">
+          <i class="bi-pencil-square"></i>
+          <span class="links_name">Edit Course</span>
+        </a>
+      </li>
+      <li>
+        <a href="student_list.php">
+          <i class="bi-file-earmark-person"></i>
+          <span class="links_name">List of Students</span>
+        </a>
+      </li>
+      <li>
+        <a href="add_student.php">
+          <i class="bi-person-plus"></i>
+          <span class="links_name">Add Student</span>
+        </a>
+      </li>
+      <li>
+        <a href="edit_student.php">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Edit Student</span>
+        </a>
+      </li>
+      <li>
+        <a href="delete_student.php">
+          <i class="bi-x-lg"></i>
+          <span class="links_name">Delete Student</span>
+        </a>
+      </li>
+      <li class="log_out">
+        <a href="../Logout.php">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Log out</span>
+        </a>
+      </li>
+    </ul>
   </div>
   <section class="home-section">
-  <nav>
+    <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="logo_name"><a href="../homepage.php">SCRIBO</span></a>
       </div>
 
       <div class="profile-details">
-                <?php
-                if ($ppic == true) {
-                    
-                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
-                } else
-                    echo ('<img src="../images/ram.png"');
+        <?php
+        if ($ppic == true) {
 
-                ?>
-                <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
+          echo ('<img src="data:image/jpg;base64,' . base64_encode($row["Profile_pic"]) . '" alt="">');
+        } else
+          echo ('<img src="../images/ram.png"');
 
-            </div>
+        ?>
+        <span class="admin_name"><?php echo ($_SESSION["name"]); ?></span>
+
+      </div>
     </nav>
     <div class="home-content">
 

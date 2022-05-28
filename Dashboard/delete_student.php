@@ -98,7 +98,7 @@ $result = mysqli_query($conn, $query);
                 <?php
                 if ($ppic == true) {
 
-                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                    echo ('<img src="data:image/jpg;base64,' . base64_encode($row["Profile_pic"]) . '" alt="">');
                 } else
                     echo ('<img src="../images/ram.png"');
 

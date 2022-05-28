@@ -9,15 +9,15 @@ $query = "SELECT
 Course_link FROM courses
 WHERE Course_Id = '$cid' ";
 $result = mysqli_query($conn, $query);
-$row=mysqli_fetch_assoc($result);
+$row = mysqli_fetch_assoc($result);
 ?>
 <?php
 $a = $_SESSION["userid"];
 $query1 = "SELECT Profile_pic from user where User_Id='$a'";
 $result1 = mysqli_query($conn, $query1);
 $ppic = true;
-$row=mysqli_fetch_assoc($result1);
-if ($row["Profile_pic"]!=null) {
+$row1 = mysqli_fetch_assoc($result1);
+if ($row1["Profile_pic"] != null) {
     $ppic = true;
 } else
     $ppic = false;
@@ -25,7 +25,7 @@ if ($row["Profile_pic"]!=null) {
 
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -86,7 +86,7 @@ if ($row["Profile_pic"]!=null) {
                 <?php
                 if ($ppic == true) {
 
-                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row1["Profile_pic"]) . 'alt="">');
                 } else
                     echo ('<img src="../images/ram.png"');
 
@@ -100,10 +100,10 @@ if ($row["Profile_pic"]!=null) {
                 <div class="recent-sales box w-100">
                     <div class="sales-details w-100">
                         <ul class="details">
-                          
-                            <video height="500" controls autoplay >
-                                
-                                <source src="<?php  echo $row["Course_link"]; ?>" type="video/mp4">
+
+                            <video height="500" controls autoplay>
+
+                                <source src="<?php echo $row["Course_link"]; ?>" type="video/mp4">
 
                             </video>
 

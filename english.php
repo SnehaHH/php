@@ -159,7 +159,7 @@ include("connection.php");
                     <div class="row mt-5">
 
                         <div class="col-sm-6">
-                        <p style="text-align:justify" ;>
+                            <p style="text-align:justify" ;>
                                 <b>English</b> is a West Germanic language of the Indo-European language family, originally spoken by the inhabitants of early medieval England. It is named after the Angles, one of the ancient Germanic peoples that migrated from Anglia, a peninsula on the Baltic Sea (not to be confused with East Anglia in England), to the area of Great Britain later named after them: England. The closest living relatives of English include Scots, followed by the Low Saxon and Frisian languages. While English is genealogically West Germanic, its vocabulary is also distinctively influenced by Old Norman French and Latin, as well as by Old Norse (a North Germanic language). Speakers of English are called Anglophones.
 
                                 The earliest forms of English, evolved from a group of West Germanic (Ingvaeonic) dialects brought to Great Britain by Anglo-Saxon settlers in the 5th century and further mutated by Norse-speaking Viking settlers starting in the 8th and 9th centuries, are collectively called Old English. Middle English began in the late 11th century with the Norman conquest of England.
@@ -177,14 +177,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='English'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='English'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    Through this course, you will be able to use familiar, everyday expressions along with simple sentences which relate to handling core needs. You will be able to hold very simple, elementary conversations with others in English.
+                                        Through this course, you will be able to use familiar, everyday expressions along with simple sentences which relate to handling core needs. You will be able to hold very simple, elementary conversations with others in English.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='English'";
                                                 $result = mysqli_query($conn, $query);
@@ -199,14 +199,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='English'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='English'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    At the end of this course, you will be able to comprehend commonly used expressions related to immediate circumstances and navigate to routine situations. You will be able to hold a basic conversation with a native speaker.
+                                        At the end of this course, you will be able to comprehend commonly used expressions related to immediate circumstances and navigate to routine situations. You will be able to hold a basic conversation with a native speaker.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A2' AND Language='English'";
                                                 $result = mysqli_query($conn, $query);
@@ -221,20 +221,20 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='English'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='English'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    At this level, one can understand the main points when clear, standard language is used and the emphasis is on familiar topics related to work, school, leisure time, and so on. Can handle most situations encountered when travelling in the language region.
+                                        At this level, one can understand the main points when clear, standard language is used and the emphasis is on familiar topics related to work, school, leisure time, and so on. Can handle most situations encountered when travelling in the language region.
 
                                         <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B1' AND Language='English'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
@@ -243,14 +243,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='English'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='English'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    At this level, one can comprehend the main points of complex texts on concrete and abstract topics; also comprehends specialised discussions in his or her primary area of specialisation. Can communicate so naturally and fluently that a normal conversation with native speakers is simple and requires little effort on either side.
+                                        At this level, one can comprehend the main points of complex texts on concrete and abstract topics; also comprehends specialised discussions in his or her primary area of specialisation. Can communicate so naturally and fluently that a normal conversation with native speakers is simple and requires little effort on either side.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='English'";
                                                 $result = mysqli_query($conn, $query);
@@ -265,20 +265,20 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='English'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='English'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    At this level, one can comprehend a wide range of difficult, longer texts as well as implicit meanings. Can express himself/herself spontaneously and fluently without frequently and noticeably searching for words. Can make clear, structured, and detailed statements on complex topics while using appropriate text association techniques.
+                                        At this level, one can comprehend a wide range of difficult, longer texts as well as implicit meanings. Can express himself/herself spontaneously and fluently without frequently and noticeably searching for words. Can make clear, structured, and detailed statements on complex topics while using appropriate text association techniques.
 
                                         <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='English'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
@@ -287,14 +287,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='English'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='English'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    Autonomous language ability. Can easily understand almost everything he or she reads or hears. Can logically recount the reasons and explanations for information gleaned from various written and spoken sources. Can spontaneously express himself/herself with high fluency and precision, as well as make finer nuances of meaning clear in more complex topics.
+                                        Autonomous language ability. Can easily understand almost everything he or she reads or hears. Can logically recount the reasons and explanations for information gleaned from various written and spoken sources. Can spontaneously express himself/herself with high fluency and precision, as well as make finer nuances of meaning clear in more complex topics.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C2' AND Language='English'";
                                                 $result = mysqli_query($conn, $query);

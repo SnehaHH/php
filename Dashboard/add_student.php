@@ -7,8 +7,8 @@ $a = $_SESSION["userid"];
 $query1 = "SELECT Profile_pic from user where User_Id='$a'";
 $result1 = mysqli_query($conn, $query1);
 $ppic = true;
-$row=mysqli_fetch_assoc($result1);
-if ($row["Profile_pic"]!=null) {
+$row = mysqli_fetch_assoc($result1);
+if ($row["Profile_pic"] != null) {
     $ppic = true;
 } else
     $ppic = false;
@@ -95,8 +95,8 @@ include("../connection.php");
             <div class="profile-details">
                 <?php
                 if ($ppic == true) {
-                    
-                    echo ('<img src="data:image/jpg; base64,' . base64_encode($row["Profile_pic"]) . 'alt="">');
+
+                    echo ('<img src="data:image/jpg;base64,' . base64_encode($row["Profile_pic"]) . '" alt="">');
                 } else
                     echo ('<img src="../images/ram.png"');
 

@@ -41,7 +41,7 @@ include("connection.php");
                     <li class="nav-item">
                         <a class="nav-link" href="faq.php">FAQs</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="blogs.php">Blogs</a>
                     </li>
                     <li class="nav-item">
