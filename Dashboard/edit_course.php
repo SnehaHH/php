@@ -212,10 +212,10 @@ $result = mysqli_query($conn, $query);
                                                 <label> Language </label> <input class="form-control" type="text" name="lang" value="<?php echo $lang; ?> " />
                                             </div>
                                             <div class="form-group">
-                                                <label> Course Name </label> <input class="form-control" type="text" name="course_name" value=" <?php echo $c_Name; ?> " />
+                                                <label> Course Name </label> <input class="form-control" type="text" name="course_name" value="<?php echo $c_Name; ?> " />
                                             </div>
                                             <div class="form-group">
-                                                <label> Level </label> <input class="form-control" type="text" name="level" value=" <?php echo $level; ?> " />
+                                                <label> Level </label> <input class="form-control" type="text" name="level" value="<?php echo $level; ?> " />
                                             </div>
                                             <div class="form-group">
                                                 <label> Description </label> <input class="form-control" type="text" name="desc" value="<?php echo $desc; ?> " />

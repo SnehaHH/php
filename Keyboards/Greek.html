@@ -11,7 +11,7 @@
         flex-direction: column;
       }
       #heading {
-        background-image: url("images/english.png");
+        background-image: url("images/french.png");
         background-repeat: no-repeat;
         background-size: 700px 100px;
         background-position: center;
@@ -24,7 +24,7 @@
         margin: 10px auto;
         font-size: 2rem;
         font-family: Andalé Mono, monospace;
-        border: solid 4px #ce142b;
+        border: solid 4px #000000;
         background-color: #f9fbf7;
         text-align: center;
       }
@@ -36,6 +36,9 @@
         border: solid 4px #000000;
         font-size: 1rem;
       }
+      #accent_row {
+        margin-bottom: 13px;
+      }
       .key_row {
         display: flex;
         margin: 4px 3px;
@@ -46,19 +49,12 @@
         font-size: 1rem;
       }
       .key_row #space {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
       fieldset {
-        height: 230px;
+        height: 263px;
         margin-bottom: 15px;
         outline: none;
-      }
-      .UseDesc {
-        width: 60%;
-        margin: 50px auto 60px;
-        font-size: 1.1rem;
-        font-family: Andalé Mono, monospace;
-        color: black;
       }
       legend {
         margin-left: 7px;
@@ -70,6 +66,9 @@
       }
       .yellow {
         background-color: rgb(224, 231, 158);
+      }
+      .ctrl {
+        background-color: rgb(243, 183, 242);
       }
 
       .btn:hover {
@@ -91,7 +90,6 @@
   </head>
 
   <body id="body">
-  
     <div id="heading"><h1>Greek</h1></div>
     <div id="keyboard">
       <form>
@@ -197,19 +195,7 @@
       </form>
     </div>
 
-    <div class="UseDesc">
-      <p>
-        The English keyboard works exactly like the English keyboard on your
-        computer. Click on the desired buttons or press the letter keys on your
-        keyboard to type. You can use Caps Lock or Shift to type capital
-        letters. You can access special characters by pressing Shift + character
-        key or clicking on Shift and then the character button. Remember to
-        paste the text for the spell checkers, as entered text will be copied to
-        clipboard :)
-      </p>
-    </div>
-
-
+    <div class="UseDesc"></div>
   </body>
   <script src="Greek.js"></script>
 </html>

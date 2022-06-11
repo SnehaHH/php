@@ -111,7 +111,7 @@ if ($row["Profile_pic"] != null) {
                         <form method="post" action="edit_profile.php" name="form_log" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="name"></label>
-                                <input class="form-control" type="text" name="name" value="<?php echo ($_SESSION["name"]); ?>" />
+                                <input class="form-control" type="text" name="name" value="<?php echo ($_SESSION["name"]); ?>" required />
                             </div>
                             <div class="form-group">
                                 <label for="email"></label>
@@ -157,23 +157,34 @@ if ($row["Profile_pic"] != null) {
                                 $conpass = null;
 
 
-                            if ($name && $currpass && $newpass && $newpass && $conpass) {
+                            if ($name && isset($currpass) && isset($newpass) && isset($conpass)) {
                                 if ($currpass === $row["Password"] && $conpass === $newpass) {
-                                    $query1 = "UPDATE user SET Name='$name',Password='$newpass', Updated_at=CURRENT_TIMESTAMP 
+                                    $query1 = "UPDATE user SET Name='$name',Password='$newpass', Updated_at=CURRENT_TIMESTAMP
         WHERE User_Id ='$a' ";
+                                } else {
+                                    echo '<script> alert("Retry. Unsuccessful!"); </script>';
+                                    echo ("<script> window.location.replace('edit_profile.php'); </script>");
                                 }
+                            } else {
+                                $query1 = "UPDATE user SET Name='$name', Updated_at=CURRENT_TIMESTAMP
+        WHERE User_Id ='$a' ";
+                            }
 
-                                if (mysqli_query($conn, $query1)) {
-                                    echo '<script>
+
+                            if (mysqli_query($conn, $query1)) {
+                                echo '<script>
             alert("Edited successfully");
         </script>';
-                                    $name = $currpass = $newpass = $conpass = $ppic = "";
-                                } else {
-                                    echo '<script>
+                                $_SESSION['name'] = $name;
+                                $name = $currpass = $newpass = $conpass = "";
+                            } else {
+                                echo '<script>
             alert("Edited Unsuccessfully");
         </script>';
-                                }
                             }
+
+
+                            echo ("<script> window.location.replace('edit_profile.php'); </script>");
                         }
                         ?>
                     </div>
