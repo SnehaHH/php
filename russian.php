@@ -134,7 +134,7 @@ include("connection.php");
                         echo ('</li>
 						<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> LOGOUT</a>
+								<a class="nav-link" href="Logout.php"> Logout</a>
 								
 							</li>
 							');
@@ -166,7 +166,7 @@ include("connection.php");
                             </p>
                         </div>
                         <div class="col-sm-6 d-flex justify-content-center">
-                        <img src="images/Russian.png" height="380" width="400">
+                            <img src="images/Russian.png" height="380" width="400">
                         </div>
 
                     </div>
@@ -176,14 +176,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Russian'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Russian'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This is the level of Russian for beginners. You will be able to understand and use common phrases and topics of everyday communication in Russian after completing this level.
+                                        This is the level of Russian for beginners. You will be able to understand and use common phrases and topics of everyday communication in Russian after completing this level.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='Russian'";
                                                 $result = mysqli_query($conn, $query);
@@ -198,14 +198,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Russian'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Russian'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    A2 is a lower-intermediate level in which you will learn to converse on everyday topics. You will be able to hold a basic conversation with a native speaker.
+                                        A2 is a lower-intermediate level in which you will learn to converse on everyday topics. You will be able to hold a basic conversation with a native speaker.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A2' AND Language='Russian'";
                                                 $result = mysqli_query($conn, $query);
@@ -220,20 +220,20 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Russian'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Russian'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This is an intermediate level of Russian. You will learn how to use Russian in your professional life, how to freely express yourself in Russian, about Russia's cultural diversity, and much more.
+                                        This is an intermediate level of Russian. You will learn how to use Russian in your professional life, how to freely express yourself in Russian, about Russia's cultural diversity, and much more.
 
                                         <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B1' AND Language='Russian'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
@@ -242,20 +242,20 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Russian'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Russian'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This is the upper-intermediate level of Russian, and it is one of the most important levels. When expressing yourself in Russian, you will gain fluency and spontaneity.
+                                        This is the upper-intermediate level of Russian, and it is one of the most important levels. When expressing yourself in Russian, you will gain fluency and spontaneity.
 
-                                       <br> <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='Russian'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                        <br> <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='Russian'";
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
@@ -264,14 +264,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Russian'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Russian'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This level marks your entry into the Russian language proficiency levels. You will progress through this complex level and achieve complete autonomy in communicating in Russian.
+                                        This level marks your entry into the Russian language proficiency levels. You will progress through this complex level and achieve complete autonomy in communicating in Russian.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='Russian'";
                                                 $result = mysqli_query($conn, $query);
@@ -286,19 +286,19 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Russian'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Russian'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    It represents expertise of Russian language. After completion of this course, you will ideally hold excellent command over the language.
+                                        It represents expertise of Russian language. After completion of this course, you will ideally hold excellent command over the language.
                                         <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C2' AND Language='Russian'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>

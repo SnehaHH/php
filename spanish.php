@@ -135,7 +135,7 @@ include("connection.php");
                         echo ('</li>
 						<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> LOGOUT</a>
+								<a class="nav-link" href="Logout.php"> Logout</a>
 								
 							</li>
 							');
@@ -162,7 +162,7 @@ include("connection.php");
                             <p style="text-align:justify" ;>
                                 <b>Spanish</b> is a Romance language of the Indo-European language family that evolved from colloquial spoken Latin in the Iberian Peninsula of Europe. Today, it is a global language with nearly 500 million native speakers, mainly in the Americas and Spain. Spanish is the official language of 20 countries. It is the world's second-most spoken native language after Mandarin Chinese; the world's fourth-most spoken language overall after English, Mandarin Chinese, and Hindi; and the world's most widely spoken Romance language. The largest population of native speakers is in Mexico.
 
-                                Spanish is part of the Ibero-Romance group of languages, which evolved from several dialects of Vulgar Latin in Iberia after the collapse of the Western Roman Empire in the 5th century. The oldest Latin texts with traces of Spanish come from mid-northern Iberia in the 9th century,and the first systematic written use of the language happened in Toledo, a prominent city of the Kingdom of Castile, in the 13th century. 
+                                Spanish is part of the Ibero-Romance group of languages, which evolved from several dialects of Vulgar Latin in Iberia after the collapse of the Western Roman Empire in the 5th century. The oldest Latin texts with traces of Spanish come from mid-northern Iberia in the 9th century,and the first systematic written use of the language happened in Toledo, a prominent city of the Kingdom of Castile, in the 13th century.
                                 <a href="https://en.wikipedia.org/wiki/Spanish_language"> For more.</a>
                             </p>
                         </div>
@@ -177,14 +177,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Spanish'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A1' AND Language='Spanish'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This is the introductory level of Spanish. You will be able to understand and use common phrases, as well as discuss everyday topics, once you have completed this level. At the end of this level, a learner is proficient enough to take the DELE- A1 exam.
+                                        This is the introductory level of Spanish. You will be able to understand and use common phrases, as well as discuss everyday topics, once you have completed this level. At the end of this level, a learner is proficient enough to take the DELE- A1 exam.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A1' AND Language='Spanish'";
                                                 $result = mysqli_query($conn, $query);
@@ -199,14 +199,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Spanish'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'A2' AND Language='Spanish'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This is the beginning level of Spanish. After this level, you will be able to understand and use common phrases, as well as discuss everyday topics. At the end of this level, a learner is competent enough to take the DELE- A1 exam.
+                                        This is the beginning level of Spanish. After this level, you will be able to understand and use common phrases, as well as discuss everyday topics. At the end of this level, a learner is competent enough to take the DELE- A1 exam.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'A2' AND Language='Spanish'";
                                                 $result = mysqli_query($conn, $query);
@@ -221,14 +221,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Spanish'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B1' AND Language='Spanish'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This is an intermediate Spanish level in which you will learn how to use Spanish in the workplace, how to express yourself freely, and how to appreciate cultural diversity. A learner is sufficiently proficient to take the DELE- B1 exam after successfully completing this level.
+                                        This is an intermediate Spanish level in which you will learn how to use Spanish in the workplace, how to express yourself freely, and how to appreciate cultural diversity. A learner is sufficiently proficient to take the DELE- B1 exam after successfully completing this level.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B1' AND Language='Spanish'";
                                                 $result = mysqli_query($conn, $query);
@@ -243,20 +243,20 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Spanish'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'B2' AND Language='Spanish'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This is the upper-intermediate level of Spanish, and it is one of the most important levels. A learner is sufficiently proficient to take the DELE- B2 exam after successfully completing this level.
+                                        This is the upper-intermediate level of Spanish, and it is one of the most important levels. A learner is sufficiently proficient to take the DELE- B2 exam after successfully completing this level.
 
                                         <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='Spanish'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
@@ -265,14 +265,14 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Spanish'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C1' AND Language='Spanish'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    This level marks your entry into the Spanish language proficiency levels. Our instructors are highly skilled in guiding you through this difficult level and achieving complete autonomy in communicating in Spanish. And after successfully completing this level, you will be prepared to take the DELE- C1 exam.
+                                        This level marks your entry into the Spanish language proficiency levels. Our instructors are highly skilled in guiding you through this difficult level and achieving complete autonomy in communicating in Spanish. And after successfully completing this level, you will be prepared to take the DELE- C1 exam.
 
                                         <br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='Spanish'";
                                                 $result = mysqli_query($conn, $query);
@@ -287,20 +287,20 @@ include("connection.php");
                         <div class="col-sm-6 mt-5">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Spanish'";
+                                    <h5 class="card-title"><b><?php $query = "SELECT Course_name from courses WHERE Level = 'C2' AND Language='Spanish'";
                                                                 $result = mysqli_query($conn, $query);
                                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                                     echo $row['Course_name'];
                                                                     break;
                                                                 }  ?></b> </h5><br>
                                     <p class="card-text">
-                                    Because it is the highest level, it is also known as the near native Spanish level. It denotes mastery of Spanish, and after successfully completing this level, you are qualified to take the DELE- C2 exam.
+                                        Because it is the highest level, it is also known as the near native Spanish level. It denotes mastery of Spanish, and after successfully completing this level, you are qualified to take the DELE- C2 exam.
 
                                         <br><br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C2' AND Language='Spanish'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                        $result = mysqli_query($conn, $query);
+                                                        $row = mysqli_fetch_assoc($result);
+                                                        $cid = $row["Course_Id"];
+                                                        echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>

@@ -190,13 +190,13 @@ $result = mysqli_query($conn, $query);
                             ?>
                                         <form method="post" action="edit_student.php">
                                             <div class="form-group">
-                                                <label> User ID </label> <input class="form-control" type="text" name="ID" value="<?php echo $id; ?> " readonly />
+                                                <label> User ID </label> <input class="form-control" type="text" name="ID" value="<?php echo $id; ?>" readonly />
                                             </div>
                                             <div class="form-group">
-                                                <label> Name </label> <input class="form-control" type="text" name="name" value="<?php echo $name; ?> " />
+                                                <label> Name </label> <input class="form-control" type="text" name="name" value="<?php echo $name; ?>" />
                                             </div>
                                             <div class="form-group">
-                                                <label> Email </label> <input class="form-control" type="email" name="email" value=" <?php echo $email; ?> " />
+                                                <label> Email </label> <input class="form-control" type="email" name="email" value=" <?php echo $email; ?>" />
                                             </div>
                                             <button class="btn btn-primary" type="submit" name="edit">Edit</button>
                                         </form>

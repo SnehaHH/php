@@ -20,34 +20,34 @@ include("connection.php");
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div id="mobile-menu-overlay"></div>
     <nav class="navbar navbar-expand-lg fixed-top">
-		<div class="container">
-			<h2 class="scribo-text"> SCRIBO </h2>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-				<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
-				<h2><b> SCRIBO </b></h2>
-					<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
-				</div>
-				<ul class="navbar-nav ml-auto align-items-center">
-					<li class="nav-item">
-						<a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="languages.php">Languages</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="faq.php">FAQs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="blogs.php">Blogs</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="testimonial.php">Testimonials</a>
-					</li>
+        <div class="container">
+            <h2 class="scribo-text"> SCRIBO </h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+                    <h2><b> SCRIBO </b></h2>
+                    <a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
+                </div>
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="languages.php">Languages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.php">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs.php">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonial.php">Testimonials</a>
+                    </li>
 
-					<?php
+                    <?php
                     if (isset($_SESSION["name"])) {
                         echo ('<li class="nav-item">
 							
@@ -75,10 +75,10 @@ include("connection.php");
 							</li>');
                     }
                     ?>
-				</ul>
-			</div>
-		</div>
-	</nav>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="page-body-wrapper">
         <section id="home" class="home" style="background-position: 0-260px">
             <div class="container">
@@ -96,9 +96,9 @@ include("connection.php");
 
                         <div class="card my-5">
                             <a href="english.php">
-                            <img class="card-img-top" src="images/engly.png" alt="Card image cap" height="300">
+                                <img class="card-img-top" src="images/engly.png" alt="Card image cap" height="300">
                                 <div class="card-body">
-                                    <h5 class="card-title"><b>English</b></h5>
+                                    <h5 class="card-title"><b>ENGLISH</b></h5>
                             </a>
                             <p class="card-text"><?php
                                                     $query = "SELECT Description from courses WHERE Language = 'English'";
@@ -164,7 +164,7 @@ include("connection.php");
     </div>
     <div class="card my-5">
         <a href="russian.php">
-        <img class="card-img-top" src="images/russ.png" alt="Card image cap" height="300">
+            <img class="card-img-top" src="images/russ.png" alt="Card image cap" height="300">
             <div class="card-body">
                 <h5 class="card-title"><b>RUSSIAN</b></h5>
         </a>
@@ -181,7 +181,7 @@ include("connection.php");
     </div>
     <div class="card my-5">
         <a href="spanish.php">
-        <img class="card-img-top" src="images/spa.png" alt="Card image cap" height="300">
+            <img class="card-img-top" src="images/spa.png" alt="Card image cap" height="300">
             <div class="card-body">
                 <h5 class="card-title"><b>SPANISH</b></h5>
         </a>
@@ -202,19 +202,19 @@ include("connection.php");
     </section>
     </div>
     <footer class="footer">
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="d-flex justify-content-between align-items-center">
-					<div class="d-flex align-items-center">
-						<h3 class="scribo-text"> SCRIBO </h3>
-						<p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
-					</div>
-					<div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <h3 class="scribo-text"> SCRIBO </h3>
+                        <p class="mb-0 text-small pt-1"><span class="mx-5">© 2022-2023 All rights reserved.</span></p>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="vendors/base/vendor.bundle.base.js"></script>
     <script src="vendors/owl.carousel/js/owl.carousel.js"></script>
     <script src="vendors/aos/js/aos.js"></script>

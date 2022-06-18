@@ -135,7 +135,7 @@ include("connection.php");
                         echo ('</li>
 						<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> LOGOUT</a>
+								<a class="nav-link" href="Logout.php"> Logout</a>
 								
 							</li>
 							');

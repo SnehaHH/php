@@ -206,22 +206,22 @@ $result = mysqli_query($conn, $query);
                             ?>
                                         <form method="post" action="edit_course.php">
                                             <div class="form-group">
-                                                <label> Course ID </label> <input class="form-control" type="text" name="ID" value="<?php echo $id; ?> " readonly />
+                                                <label> Course ID </label> <input class="form-control" type="text" name="ID" value="<?php echo $id; ?>" readonly />
                                             </div>
                                             <div class="form-group">
-                                                <label> Language </label> <input class="form-control" type="text" name="lang" value="<?php echo $lang; ?> " />
+                                                <label> Language </label> <input class="form-control" type="text" name="lang" value="<?php echo $lang; ?>" />
                                             </div>
                                             <div class="form-group">
-                                                <label> Course Name </label> <input class="form-control" type="text" name="course_name" value="<?php echo $c_Name; ?> " />
+                                                <label> Course Name </label> <input class="form-control" type="text" name="course_name" value="<?php echo $c_Name; ?>" />
                                             </div>
                                             <div class="form-group">
-                                                <label> Level </label> <input class="form-control" type="text" name="level" value="<?php echo $level; ?> " />
+                                                <label> Level </label> <input class="form-control" type="text" name="level" value="<?php echo $level; ?>" />
                                             </div>
                                             <div class="form-group">
-                                                <label> Description </label> <input class="form-control" type="text" name="desc" value="<?php echo $desc; ?> " />
+                                                <label> Description </label> <input class="form-control" type="text" name="desc" value="<?php echo $desc; ?>" />
                                             </div>
                                             <div class="form-group">
-                                                <label> Price </label><input class="form-control" type="text" name="price" value="<?php echo $price; ?> " />
+                                                <label> Price </label><input class="form-control" type="text" name="price" value="<?php echo $price; ?>" />
                                             </div>
                                             <button class="btn btn-primary" type="submit" name="edit">Edit</button>
                                         </form>

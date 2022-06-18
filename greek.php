@@ -135,7 +135,7 @@ include("connection.php");
                         echo ('</li>
 						<li class="nav-item">
 							
-								<a class="nav-link" href="Logout.php"> LOGOUT</a>
+								<a class="nav-link" href="Logout.php"> Logout</a>
 								
 							</li>
 							');
@@ -166,7 +166,7 @@ include("connection.php");
                             </p>
                         </div>
                         <div class="col-sm-6 d-flex justify-content-center">
-                        <img src="images/Greece.png" height="320" width="500">
+                            <img src="images/Greece.png" height="320" width="500">
                         </div>
 
                     </div>
@@ -253,10 +253,10 @@ include("connection.php");
                                         The goal of this course is to assist you in securing and then broadening your previously acquired knowledge of the vocabulary and grammar described in previous levels.
 
                                         <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'B2' AND Language='Greek'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
@@ -277,10 +277,10 @@ include("connection.php");
 
 
                                         <br><br> <?php $query = "SELECT Price,Course_Id from courses WHERE Level = 'C1' AND Language='Greek'";
-                                                $result = mysqli_query($conn, $query);
-                                                $row = mysqli_fetch_assoc($result);
-                                                $cid = $row["Course_Id"];
-                                                echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
+                                                    $result = mysqli_query($conn, $query);
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $cid = $row["Course_Id"];
+                                                    echo "<br> <b>Rs. " . $row['Price'] . "</b></br>"; ?>
                                     </p><br>
                                     <button type="button" class="btn btn-primary" id="<?php echo $cid; ?>"> Add to cart! </button>
                                 </div>
